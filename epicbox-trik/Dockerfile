@@ -12,4 +12,4 @@ RUN echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty mai
 
 ADD trik_checker.tar.gz /
 RUN chown -R root:root /trikStudio-checker
-
+RUN locale-gen ru_RU.UTF-8 && echo "export LANG=ru_RU.UTF-8" >> ~/.bashrc
