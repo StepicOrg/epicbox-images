@@ -1,2 +1,2 @@
 # epicbox-images
-Dockerfiles to build images used to run untrusted code on Stepic.org
+Dockerfiles to build images used to run untrusted code on Stepik.org
