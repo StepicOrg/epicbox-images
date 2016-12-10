@@ -15,6 +15,6 @@ RUN echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty mai
     qt55base qt55svg qt55script \
   && apt-get clean all \
   && locale-gen ru_RU.UTF-8 \
-  && echo -e "export LANG=ru_RU.UTF-8\nsource /opt/qt55/bin/qt55-env.sh" >> ~/.bashrc
+  && /bin/echo -e "export LANG=ru_RU.UTF-8\nsource /opt/qt55/bin/qt55-env.sh" >> ~/.bashrc
 ADD trik_checker.tar.bz2 /
 RUN chown -R root:root /trikStudio-checker
