@@ -10,11 +10,12 @@ RUN echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty mai
    &&  apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 10C56D0DE9977759 \
    && apt-get update \
    && apt-get install -y --no-install-recommends \
-    tar bzip2 liblsan0 libubsan0 libharfbuzz0b libproxy1 libglib2.0-0 \
+    tar bzip2 xz-utils \
+    liblsan0 libubsan0 libharfbuzz0b libproxy1 libglib2.0-0 \
     libxext6 libgl1-mesa-glx libstdc++6 unzip libfreetype6 fontconfig libxrender1 \
     qt55base qt55svg qt55script \
   && apt-get clean all \
   && locale-gen ru_RU.UTF-8 \
   && /bin/echo -e "export LANG=ru_RU.UTF-8\nsource /opt/qt55/bin/qt55-env.sh" >> ~/.bashrc
-ADD trik_checker.tar.bz2 /
+ADD trik_checker.tar.xz /
 RUN chown -R root:root /trikStudio-checker
