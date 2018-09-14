@@ -18,3 +18,6 @@ Images for programming languages:
 * PHP: [`stepik/epicbox-php:7.2.6`](https://hub.docker.com/r/stepik/epicbox-php/)
 * R: [`stepik/epicbox-r:3.4.2`](https://hub.docker.com/r/stepik/epicbox-r/)
 * [TRIK Studio](http://www.trikset.com/): [`stepik/epicbox-trik:20171122`](https://hub.docker.com/r/stepik/epicbox-trik/)
+
+All images are built automatically in Docker Hub but builds are triggered manually by the Stepik team.
+__
