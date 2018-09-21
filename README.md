@@ -20,4 +20,3 @@ Images for programming languages:
 * [TRIK Studio](http://www.trikset.com/): [`stepik/epicbox-trik:20171122`](https://hub.docker.com/r/stepik/epicbox-trik/)
 
 All images are built automatically in Docker Hub but builds are triggered manually by the Stepik team.
-__
