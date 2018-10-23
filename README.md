@@ -12,7 +12,7 @@ Images for programming languages:
 * C#: [`stepik/epicbox-mono:5.0.0`](https://hub.docker.com/r/stepik/epicbox-mono/)
 * Go: [`stepik/epicbox-go:1.8.1`](https://hub.docker.com/r/stepik/epicbox-go/)
 * Java 8: [`stepik/epicbox-java:8u181`](https://hub.docker.com/r/stepik/epicbox-java/)
-* Java 9: [`stepik/epicbox-java9:9.0.1`](https://hub.docker.com/r/stepik/epicbox-java9/)
+* Java 9: [`stepik/epicbox-java:9.0.1`](https://hub.docker.com/r/stepik/epicbox-java/)
 * Java 11: [`stepik/epicbox-java:11.0.1`](https://hub.docker.com/r/stepik/epicbox-java/)
 * Octave: [`stepik/epicbox-octave:4.0.3`](https://hub.docker.com/r/stepik/epicbox-octave/)
 * PascalABC.NET: [`stepik/epicbox-pascalabc:3.2`](https://hub.docker.com/r/stepik/epicbox-pascalabc/)
