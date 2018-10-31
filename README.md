@@ -21,4 +21,7 @@ Images for programming languages:
 * R: [`stepik/epicbox-r:3.4.2`](https://hub.docker.com/r/stepik/epicbox-r/)
 * [TRIK Studio](http://www.trikset.com/): [`stepik/epicbox-trik:20171122`](https://hub.docker.com/r/stepik/epicbox-trik/)
 
+Images for source code analyzers:
+* [PMD](https://pmd.github.io): [`stepik/epicbox-pmd:6.9.0`](https://hub.docker.com/r/stepik/epicbox-pmd/)
+
 All images are built automatically in Docker Hub but builds are triggered manually by the Stepik team.
