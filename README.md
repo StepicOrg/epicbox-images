@@ -11,6 +11,7 @@ Images for programming languages:
 * ASM32, ASM64, C, C++, C++11: [`stepik/epicbox-gcc:6.3.0`](https://hub.docker.com/r/stepik/epicbox-gcc/)
 * C#: [`stepik/epicbox-mono:5.0.0`](https://hub.docker.com/r/stepik/epicbox-mono/)
 * Go: [`stepik/epicbox-go:1.8.1`](https://hub.docker.com/r/stepik/epicbox-go/)
+* Java 7: [`stepik/epicbox-java:7u181`](https://hub.docker.com/r/stepik/epicbox-java/)
 * Java 8: [`stepik/epicbox-java:8u181`](https://hub.docker.com/r/stepik/epicbox-java/)
 * Java 9: [`stepik/epicbox-java:9.0.1`](https://hub.docker.com/r/stepik/epicbox-java/)
 * Java 11: [`stepik/epicbox-java:11.0.1`](https://hub.docker.com/r/stepik/epicbox-java/)
