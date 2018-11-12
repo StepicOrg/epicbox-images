@@ -20,6 +20,7 @@ Images for programming languages:
 * Perl: [`stepik/epicbox-perl:5.24.3`](https://hub.docker.com/r/stepik/epicbox-perl/)
 * PHP: [`stepik/epicbox-php:7.2.6`](https://hub.docker.com/r/stepik/epicbox-php/)
 * R: [`stepik/epicbox-r:3.4.2`](https://hub.docker.com/r/stepik/epicbox-r/)
+* Ruby: [`stepik/epicbox-ruby:2.5.3`](https://hub.docker.com/r/stepik/epicbox-ruby/)
 * Scala: [`stepik/epicbox-scala:2.12.7`](https://hub.docker.com/r/stepik/epicbox-scala/)
 * [TRIK Studio](http://www.trikset.com/): [`stepik/epicbox-trik:20171122`](https://hub.docker.com/r/stepik/epicbox-trik/)
 
