@@ -15,6 +15,7 @@ Images for programming languages:
 * Java 8: [`stepik/epicbox-java:8u181`](https://hub.docker.com/r/stepik/epicbox-java/)
 * Java 9: [`stepik/epicbox-java:9.0.1`](https://hub.docker.com/r/stepik/epicbox-java/)
 * Java 11: [`stepik/epicbox-java:11.0.1`](https://hub.docker.com/r/stepik/epicbox-java/)
+* JavaScript: [`stepik/epicbox-node:10.13.0`](https://hub.docker.com/r/stepik/epicbox-node/)
 * Octave: [`stepik/epicbox-octave:4.0.3`](https://hub.docker.com/r/stepik/epicbox-octave/)
 * PascalABC.NET: [`stepik/epicbox-pascalabc:3.2`](https://hub.docker.com/r/stepik/epicbox-pascalabc/)
 * Perl: [`stepik/epicbox-perl:5.24.3`](https://hub.docker.com/r/stepik/epicbox-perl/)
