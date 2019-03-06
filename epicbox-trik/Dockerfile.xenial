@@ -26,6 +26,9 @@ RUN  apt-get install -y --no-install-recommends \
     tar bzip2 xz-utils \
     libxext6 libgl1-mesa-glx libstdc++6 unzip libfreetype6 fontconfig libxrender1 \
     qt56base qt56svg qt56script qt56multimedia
+
+RUN apt-get install -y libubsan0
+
 RUN apt-get clean all
 RUN locale-gen ru_RU.UTF-8 \
   && /bin/echo -e "/opt/qt56/lib/x86_64-linux-gnu\n/opt/qt56/lib\n" > /etc/ld.so.conf.d/zz_opt_qt.conf \
