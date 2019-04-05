@@ -8,4 +8,4 @@ fi
 cp -R /checker/template/. /sandbox
 gradle test -q --project-dir=/sandbox --console=plain --offline > stdout.txt 2> stderr.txt
 echo $? > code.txt
-python /checker/process.py
+python3 /checker/process.py
