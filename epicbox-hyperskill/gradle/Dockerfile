@@ -1,4 +1,4 @@
-FROM gradle:5.3.1-jdk11
+FROM gradle:4.10-jdk11
 
 COPY --chown=gradle checker/ /checker/
 RUN gradle --project-dir=/checker/template test && \
