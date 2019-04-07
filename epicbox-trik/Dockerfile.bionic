@@ -23,13 +23,12 @@ RUN apt-get install -y locales apt-utils gnupg2
 
 RUN  apt-get update
 RUN  apt-get install -y --no-install-recommends \
-    tar bzip2 xz-utils \
-    libxext6 libgl1-mesa-glx libstdc++6 unzip libfreetype6 fontconfig libxrender1 libdbus-1-3 libegl1 libpulse0
+    tar bzip2 xz-utils libstdc++6 libbsd0 libdbus-1-3 libexpat1 libwrap0
 
 RUN apt-get clean all
-RUN locale-gen ru_RU.UTF-8 \
-  && /bin/echo -e "/trikStudio-checker/bin\n" > /etc/ld.so.conf.d/zz_opt_qt.conf \
-  && ldconfig
-ENV LANG ru_RU.UTF-8
 ADD trik_checker.tar.xz /
+RUN locale-gen ru_RU.UTF-8 \
+  && /bin/echo -e "/trikStudio-checker/bin\n" > /etc/ld.so.conf.d/zz_trik_libs.conf \
+  && ldconfig -v
+ENV LANG ru_RU.UTF-8
 RUN chown -R root:root /trikStudio-checker
