@@ -16,7 +16,7 @@ RUN locale-gen ru_RU.UTF-8 \
   && ldconfig -v \
   && chown -R root:root /trikStudio-checker \
   && echo '-l /trikStudio-checker' >> /etc/prelink.conf \
-  && prelink -amR
+  && prelink -vamR
 
 ENV LANG ru_RU.UTF-8
 
