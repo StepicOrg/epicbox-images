@@ -1,21 +1,28 @@
 FROM ubuntu:xenial
 MAINTAINER Iakov Kirilenko <Iakov.Kirilenko@trikset.com>
 ENV DEBIAN_FRONTEND noninteractive
-RUN useradd -M -d /sandbox sandbox
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends locales apt-utils
-RUN apt-get -y dist-upgrade
-RUN  apt-get install -y --no-install-recommends \
-    prelink tar bzip2 xz-utils libbsd0 libdbus-1-3 libexpat1 libwrap0
-RUN apt-get install -y --no-install-recommends libpng12-0 libglib2.0-0 libjson-c2
+RUN set -eu \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends locales apt-utils \
+    && apt-get -y dist-upgrade \
+    && apt-get install -y --no-install-recommends \
+               libbsd0 libdbus-1-3 libexpat1 libwrap0 \
+	       libpng12-0 libglib2.0-0 libjson-c2 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+            /var/cache/debconf/* \
+            /usr/share/doc \
+            /usr/share/man \
+            /usr/share/locale/?? \
+            /usr/share/locale/??_?? \
+    && locale-gen --purge ru_RU.UTF-8 \
+    && useradd -M -d /sandbox sandbox \
+    && /bin/echo -e "/trikStudio-checker/bin\n" > /etc/ld.so.conf.d/zz_trik_libs.conf \
+    && echo '-l /trikStudio-checker' >> /etc/prelink.conf
+
 # Add binaries before ldconfig & prelink.
 ADD trik_checker.tar.xz /
-RUN locale-gen ru_RU.UTF-8 \
-  && /bin/echo -e "/trikStudio-checker/bin\n" > /etc/ld.so.conf.d/zz_trik_libs.conf \
-  && ldconfig -v \
-  && chown -R root:root /trikStudio-checker \
-  && echo '-l /trikStudio-checker' >> /etc/prelink.conf \
-  && prelink -vamR
+RUN chown -R root:root /trikStudio-checker \
+  && ldconfig -v
 ENV LANG ru_RU.UTF-8
-#Cleanup
-RUN apt-get clean && rm -rf /var/lib/{apt,dpkg} && du -csh /* 2>/dev/null | sort -h || :
+RUN du -csh /* 2>/dev/null | sort -h || :
