@@ -32,7 +32,7 @@ subprojects {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
         testCompile 'org.assertj:assertj-swing-junit:3.8.0'
         testCompile 'com.google.code.gson:gson:2.8.5'
-        testImplementation 'com.github.hyperskill:hs-test:40f80fe7449dba912943a7eb40e9831ddb9065b7'
+        testImplementation 'com.github.hyperskill:hs-test:9bf6f91b381c05a3ebda5f16159fe2fac321aae7'
     }
 
     sourceSets {
