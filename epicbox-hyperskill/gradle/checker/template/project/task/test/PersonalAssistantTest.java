@@ -1,7 +1,9 @@
 import assistant.PersonalAssistant;
-import org.hyperskill.hstest.v1.CheckResult;
-import org.hyperskill.hstest.v1.MainMethodTest;
-import org.hyperskill.hstest.v1.TestCase;
+import org.hyperskill.hstest.v3.testcase.CheckResult;
+import org.hyperskill.hstest.v3.stage.MainMethodTest;
+import org.hyperskill.hstest.v3.testcase.TestCase;
+
+import java.util.List;
 
 
 public class PersonalAssistantTest extends MainMethodTest {
@@ -11,10 +13,10 @@ public class PersonalAssistantTest extends MainMethodTest {
     }
 
     @Override
-    public TestCase[] generateTestCases() {
-        return new TestCase[] {
+    public List<TestCase> generateTestCases() {
+        return List.of(
             new TestCase<>()
-        };
+        );
     }
 
     @Override
