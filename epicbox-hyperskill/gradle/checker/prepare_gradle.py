@@ -1,8 +1,10 @@
 import os
 
 PROJECT_FOLDER = '/sandbox/project'
-DEFAULT_GRADLE = '/sandbox/build.gradle'
-GRADLE_WITHOUT_KOTLIN = '/sandbox/build_no_kotlin.gradle'
+BUILD_GRADLE = '/sandbox/build.gradle'
+
+KOTLIN_PLUGIN = "id 'org.jetbrains.kotlin.jvm'"
+KOTLIN_DEPENDENCY = "implementation 'org.jetbrains.kotlin:"
 
 
 def need_include_kotlin():
@@ -16,6 +18,9 @@ def need_include_kotlin():
 if __name__ == '__main__':
 
     if not need_include_kotlin():
-        # kotlin is included in default gradle
-        os.remove(DEFAULT_GRADLE)
-        os.rename(GRADLE_WITHOUT_KOTLIN, DEFAULT_GRADLE)
+        # kotlin is included in default
+        build = open(BUILD_GRADLE, 'r').read()
+        build = build.replace(KOTLIN_PLUGIN, '//' + KOTLIN_PLUGIN)
+        build = build.replace(KOTLIN_DEPENDENCY, '//' + KOTLIN_DEPENDENCY)
+        with open(BUILD_GRADLE, 'w') as file:
+            file.write(build)
