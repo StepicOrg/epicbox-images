@@ -18,7 +18,7 @@ def need_include_kotlin():
 if __name__ == '__main__':
 
     if not need_include_kotlin():
-        # kotlin is included in default
+        # kotlin is included by default
         build = open(BUILD_GRADLE, 'r').read()
         build = build.replace(KOTLIN_PLUGIN, '//' + KOTLIN_PLUGIN)
         build = build.replace(KOTLIN_DEPENDENCY, '//' + KOTLIN_DEPENDENCY)
