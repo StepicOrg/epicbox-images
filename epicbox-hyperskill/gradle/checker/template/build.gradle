@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation group: 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     testImplementation 'org.assertj:assertj-swing-junit:3.8.0'
     testImplementation 'com.google.code.gson:gson:2.8.5'
