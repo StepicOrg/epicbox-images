@@ -19,8 +19,8 @@ dependencies {
 }
 
 sourceSets {
-    main.java.srcDir 'project/task/src'
-    test.java.srcDir 'project/task/test'
+    main.java.srcDir 'src'
+    test.java.srcDir 'test'
 }
 
 test {

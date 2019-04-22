@@ -1,6 +1,6 @@
 import json
 
-TASK_ROOT = '/sandbox/project/task/'
+TASK_ROOT = '/sandbox/'
 FAILED_TEST_BEGIN = '#educational_plugin FAILED + '
 FAILED_TEST_CONTINUE = '#educational_plugin'
 
