@@ -6,6 +6,7 @@ if [[ -d /home/gradle/.gradle_cache ]]; then
 fi
 
 cp -R /checker/template/. /sandbox
-gradle test -q --project-dir=/sandbox --console=plain --offline > stdout.txt 2> stderr.txt
+python3 /checker/prepare_gradle.py
+gradle test -q --project-dir=/sandbox --no-daemon --console=plain --offline > stdout.txt 2> stderr.txt
 echo $? > code.txt
 python3 /checker/process.py
