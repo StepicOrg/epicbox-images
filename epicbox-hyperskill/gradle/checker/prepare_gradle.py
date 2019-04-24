@@ -1,6 +1,6 @@
 import os
 
-PROJECT_FOLDER = '/sandbox/project'
+PROJECT_FOLDER = '/sandbox'
 BUILD_GRADLE = '/sandbox/build.gradle'
 
 KOTLIN_PLUGIN = "id 'org.jetbrains.kotlin.jvm'"
