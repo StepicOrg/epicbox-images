@@ -1,7 +1,7 @@
 import assistant.PersonalAssistant;
-import org.hyperskill.hstest.v3.testcase.CheckResult;
-import org.hyperskill.hstest.v3.stage.MainMethodTest;
-import org.hyperskill.hstest.v3.testcase.TestCase;
+import org.hyperskill.hstest.v4.testcase.CheckResult;
+import org.hyperskill.hstest.v4.stage.MainMethodTest;
+import org.hyperskill.hstest.v4.testcase.TestCase;
 
 import java.util.List;
 
