@@ -33,7 +33,7 @@ Images for source code analyzers:
 * [PMD](https://pmd.github.io): [`stepik/epicbox-pmd:6.9.0`](https://hub.docker.com/r/stepik/epicbox-pmd/)
 
 Images for Hyperskill (EduTools):
-* Gradle: [`stepik/epicbox-hyperskill:gradle-20190221`](https://hub.docker.com/r/stepik/epicbox-hyperskill/)
-* Python: [`stepik/epicbox-hyperskill:python-20190404`](https://hub.docker.com/r/stepik/epicbox-hyperskill/)
+* Gradle: [`stepik/epicbox-hyperskill:gradle-20190424`](https://hub.docker.com/r/stepik/epicbox-hyperskill/)
+* Python: [`stepik/epicbox-hyperskill:python-20190424`](https://hub.docker.com/r/stepik/epicbox-hyperskill/)
 
 All images are built automatically in Docker Hub but builds are triggered manually by the Stepik team.
