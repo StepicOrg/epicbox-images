@@ -13,9 +13,14 @@ if __name__ == '__main__':
         stdout = open('stdout.txt').read().splitlines()
         stderr = open('stderr.txt').read().splitlines()
         score = 0
-        feedback = ('Cannot check the submission. Please send the report to Hyperskill team.\n'
-                    'stdout:\n{stdout}\n\nstderr:\n{stderr}'.format(stdout='\n'.join(stdout),
-                                                                    stderr='\n'.join(stderr)))
+
+        feedback = (
+            'Cannot check the submission.\n\nPerhaps your program '
+            'has fallen into an infinite loop or created too many objects in memory. '
+            'If you are sure that this is not the case, please send the report to Hyperskill team.\n'
+            'stdout:\n{stdout}\n\nstderr:\n{stderr}'
+                .format(stdout='\n'.join(stdout), stderr='\n'.join(stderr))
+        )
 
         if any(line.startswith('> Compilation failed;') or # detect java compile error
                line.startswith('> Compilation error.')     # detect kotlin compile error
