@@ -12,9 +12,13 @@ if __name__ == '__main__':
     stderr = open('stderr.txt').read().splitlines()
     if code != '0':
         score = 0
-        feedback = ('Cannot check the submission. Please send the report to Hyperskill team.\n'
-                    'stdout:\n{stdout}\n\nstderr:\n{stderr}'.format(stdout='\n'.join(stdout),
-                                                                    stderr='\n'.join(stderr)))
+        feedback = (
+            'Cannot check the submission.\n\nPerhaps your program '
+            'has fallen into an infinite loop or created too many objects in memory. '
+            'If you are sure that this is not the case, please send the report to Hyperskill team.\n'
+            'stdout:\n{stdout}\n\nstderr:\n{stderr}'
+                .format(stdout='\n'.join(stdout), stderr='\n'.join(stderr))
+        )
 
     elif any(line.startswith(FAILED_TEST_BEGIN) for line in stdout):
         score = 0
