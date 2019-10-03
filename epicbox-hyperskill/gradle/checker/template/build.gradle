@@ -15,7 +15,7 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     testImplementation 'org.assertj:assertj-swing-junit:3.8.0'
     testImplementation 'com.google.code.gson:gson:2.8.5'
-    testImplementation 'com.github.hyperskill:hs-test:788dd8cf2f09b39f18ee4c06053708b181ae0679'
+    testImplementation 'com.github.hyperskill:hs-test:v6'
 }
 
 sourceSets {
