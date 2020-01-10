@@ -17,7 +17,7 @@ if __name__ == '__main__':
         feedback = (
             'Cannot check the submission.\n\nPerhaps your program '
             'has fallen into an infinite loop or created too many objects in memory. '
-            'If you are sure that this is not the case, please send the report to Hyperskill team.\n'
+            'If you are sure that this is not the case, please send the report to support@hyperskill.org\n'
             'stdout:\n{stdout}\n\nstderr:\n{stderr}'
                 .format(stdout='\n'.join(stdout), stderr='\n'.join(stderr))
         )
