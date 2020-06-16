@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     build = open(BUILD_GRADLE, 'r').read()
 
-    for ext, to_comment in TO_COMMENT:
+    for ext, to_comment in TO_COMMENT.items():
         if not contains_extension(ext):
             for line in to_comment:
                 build = build.replace(line, '//' + line)
