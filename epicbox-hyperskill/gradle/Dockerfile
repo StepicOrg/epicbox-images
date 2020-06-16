@@ -9,4 +9,6 @@ USER gradle
 COPY --chown=gradle checker/ /checker/
 
 RUN gradle --no-daemon --project-dir=/checker/template resolveDependencies && \
-    cp -r /home/gradle/.gradle /home/gradle/.gradle_cache
+    cp -r /home/gradle/.gradle /home/gradle/.gradle_cache && \
+    rm -rf /checker/template/src/* && \
+    rm -rf /checker/template/test/*
