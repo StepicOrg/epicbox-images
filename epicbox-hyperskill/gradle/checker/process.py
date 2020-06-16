@@ -22,7 +22,7 @@ if __name__ == '__main__':
                 .format(stdout='\n'.join(stdout), stderr='\n'.join(stderr))
         )
 
-        if any(line.startswith('> Compilation failed;') or # detect java compile error
+        if any(line.startswith('> Compilation failed') or  # detect java and scala compile error
                line.startswith('> Compilation error.')     # detect kotlin compile error
                for line in stderr):
             output = []
