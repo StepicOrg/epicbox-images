@@ -10,7 +10,9 @@ TO_COMMENT = {
     ],
     '.scala': [
         "id 'scala'", 
-        "implementation 'org.scala-lang:scala-library:"
+        "implementation 'org.scala-lang:scala-library:",
+        "scala.srcDir 'src'",
+        "scala.srcDir 'test'"
     ]
 }
 

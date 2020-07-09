@@ -22,8 +22,14 @@ dependencies {
 }
 
 sourceSets {
-    main.java.srcDir 'src'
-    test.java.srcDir 'test'
+    main {
+        java.srcDir 'src'
+        scala.srcDir 'src'
+    }
+    test {
+        java.srcDir 'test'
+        scala.srcDir 'test'
+    }
 }
 
 test {
