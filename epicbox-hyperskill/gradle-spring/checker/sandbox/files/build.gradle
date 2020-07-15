@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+}
+
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets.main.resources.srcDirs = ["resources"]
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
