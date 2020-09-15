@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'application'
+    apply plugin: 'java'
+
+    sourceCompatibility = 11
+
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+
+    dependencies {
+        testImplementation 'junit:junit:4.12'
+        testImplementation 'com.google.code.gson:gson:2.8.5'
+        testImplementation 'org.apache.httpcomponents:httpclient:4.5.9'
+        testImplementation 'com.github.hyperskill:hs-test:v7.1'
+    }
+
+    sourceSets {
+        main.java.srcDir 'src'
+        test.java.srcDir 'test'
+    }
+
+    test {
+        systemProperty "insideDocker", "true"
+        systemProperty "file.encoding", "utf-8"
+        outputs.upToDateWhen { false }
+        afterTest { TestDescriptor test, TestResult result ->
+            if (result.resultType == TestResult.ResultType.FAILURE) {
+                def message = result.exception?.message ?: "Wrong answer"
+                def lines = message.readLines()
+                println "#educational_plugin FAILED + " + lines[0]
+                lines[1..-1].forEach { line ->
+                    println "#educational_plugin" + line
+                }
+            }
+        }
+    }
+
+    compileJava.options.encoding = 'UTF-8'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}
