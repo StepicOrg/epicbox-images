@@ -1,6 +1,7 @@
 plugins {
     id 'application'
     id 'org.jetbrains.kotlin.jvm' version '1.3.70'
+    id 'scala'
 }
 
 sourceCompatibility = 11
@@ -11,16 +12,24 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'org.scala-lang:scala-library:2.12.7'
+
+    testImplementation 'junit:junit:4.12'
     testImplementation 'org.assertj:assertj-swing-junit:3.8.0'
     testImplementation 'com.google.code.gson:gson:2.8.5'
     testImplementation 'com.github.hyperskill:hs-test:v7.0.1'
 }
 
 sourceSets {
-    main.java.srcDir 'src'
-    test.java.srcDir 'test'
+    main {
+        java.srcDir 'src'
+        scala.srcDir 'src'
+    }
+    test {
+        java.srcDir 'test'
+        scala.srcDir 'test'
+    }
 }
 
 test {
@@ -35,8 +44,4 @@ test {
             }
         }
     }
-}
-
-wrapper {
-    gradleVersion = '5.3.1'
 }
