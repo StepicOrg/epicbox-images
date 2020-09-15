@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "puppeteer": "^4.0.0",
+    "hs-test-web": "https://github.com/hyperskill/hs-test-web/archive/v1.tar.gz",
+    "hs-test-web-server": "https://github.com/hyperskill/hs-test-web-server/archive/v1.tar.gz"
+  },
+  "scripts": {
+    "test": "node test/test.js",
+    "start": "node node_modules/hs-test-web-server/start.js"
+  }
+}
