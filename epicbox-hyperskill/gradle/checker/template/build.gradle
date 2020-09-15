@@ -18,7 +18,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.assertj:assertj-swing-junit:3.8.0'
     testImplementation 'com.google.code.gson:gson:2.8.5'
-    testImplementation 'com.github.hyperskill:hs-test:v7.0.1'
+    testImplementation 'com.github.hyperskill:hs-test:v7.2'
 }
 
 sourceSets {
@@ -33,6 +33,8 @@ sourceSets {
 }
 
 test {
+    systemProperty "insideDocker", "true"
+    systemProperty "file.encoding", "utf-8"
     outputs.upToDateWhen { false }
     afterTest { TestDescriptor test, TestResult result ->
         if (result.resultType == TestResult.ResultType.FAILURE) {
@@ -43,5 +45,10 @@ test {
                 println "#educational_plugin" + line
             }
         }
+    }
+
+    compileJava.options.encoding = 'UTF-8'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
     }
 }
