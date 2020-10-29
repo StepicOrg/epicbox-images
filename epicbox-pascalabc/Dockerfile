@@ -1,4 +1,4 @@
-FROM stepik/epicbox-mono:5.0.0
+FROM stepik/epicbox-mono:6.10.0
 MAINTAINER Alexander Petrov <alexander.petrov@stepik.org>
 
 RUN apt-get update && apt-get install wget unzip -y &&\
