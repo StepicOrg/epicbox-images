@@ -1,4 +1,4 @@
-FROM zenika/kotlin:1.3.11-slim
+FROM zenika/kotlin:1.4.10-slim
 MAINTAINER Stepik Team <ab@stepik.org>
 
 COPY java_lookup_main.sh /usr/local/bin/java_lookup_main.sh
