@@ -19,7 +19,7 @@ subprojects {
         testImplementation 'junit:junit:4.12'
         testImplementation 'com.google.code.gson:gson:2.8.5'
         testImplementation 'org.apache.httpcomponents:httpclient:4.5.9'
-        testImplementation 'com.github.hyperskill:hs-test:v7.1'
+        testImplementation 'com.github.hyperskill:hs-test:v8'
     }
 
     sourceSets {
