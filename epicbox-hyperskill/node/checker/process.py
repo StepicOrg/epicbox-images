@@ -2,63 +2,83 @@ import json
 
 TASK_ROOT = '/checker/sandbox/'
 
-FAILED_TEST_BEGIN = '#educational_plugin FAILED + '
-FAILED_TEST_CONTINUE = '#educational_plugin '
+# Jest uses custom formatting:
+# an actual feedback is between the following strings
+FAILED_TEST_BEGIN = 'Error: Failed: "'
+FAILED_TEST_END = '"\n    at Env.fail'
 
 COMPILATION_ERROR_BEGIN = 'SyntaxError:'
 COMPILATION_ERROR_END = '    at '  # start of the stacktrace
+MODULE_ERROR_BEGIN = 'ERROR in'
+
+COMPILATION_ERROR_TEXT = 'Compilation error during testing\n\n'
+UNEXPECTED_ERROR_TEXT = 'Unexpected error during testing\n\n'
 
 if __name__ == '__main__':
     score = 1
     feedback = ''
 
     code = open('code.txt', encoding="utf-8").read().strip()
-    stdout = open('stdout.txt', encoding="utf-8").read().splitlines()
-    stderr = open('stderr.txt', encoding="utf-8").read().splitlines()
-    if code != '0':
+    stdout = open('stdout.txt', encoding="utf-8").read()
+    stderr = open('stderr.txt', encoding="utf-8").read()
+
+    fatal_feedback = (
+        'Cannot check the submission.\n\nPerhaps your program '
+        'has fallen into an infinite loop or created too many objects in memory. '
+        'If you are sure that this is not the case, please send the report to support@hyperskill.org\n'
+        'stdout:\n{stdout}\n\nstderr:\n{stderr}'
+            .format(stdout=stdout, stderr=stderr)
+    )
+
+    try:
+        stdout_json = json.loads(stdout)
+    except:
+        code = '-1'
+
+    # 0 is accepted, 1 is wrong answer
+    if code != '0' and code != '1':
         score = 0
-        feedback = (
-            'Cannot check the submission.\n\nPerhaps your program '
-            'has fallen into an infinite loop or created too many objects in memory. '
-            'If you are sure that this is not the case, please send the report to support@hyperskill.org\n'
-            'stdout:\n{stdout}\n\nstderr:\n{stderr}'
-                .format(stdout='\n'.join(stdout), stderr='\n'.join(stderr))
-        )
+        feedback = fatal_feedback
 
-    elif any(line.startswith(COMPILATION_ERROR_BEGIN) for line in stderr):
+    elif code == '0':
+        pass
+
+    else:
         score = 0
-        output = []
-        output_started = False
+        try:
+            error_message = stdout_json["testResults"][0]["assertionResults"][0]["failureMessages"][0]
 
-        for line in stderr:
-            if line.startswith(COMPILATION_ERROR_END):
-                break
+            if error_message.startswith(FAILED_TEST_BEGIN) and FAILED_TEST_END in error_message:
+                start = len(FAILED_TEST_BEGIN)
+                end = error_message.index(FAILED_TEST_END)
+                error_message = error_message[start: end]
 
-            if TASK_ROOT in line:
-                line = line.replace(TASK_ROOT, '', 1)
+                # Jest escapes " characters in the actual feedback
+                # because it presents an actual feedback as a string inside string
+                error_message = error_message.replace(r'\"', '"')
+                lines = error_message.split('\n')
 
-            if line.startswith(COMPILATION_ERROR_BEGIN):
-                output_started = True
+                # Syntax errors (during compilation)
+                if any(l.startswith(COMPILATION_ERROR_BEGIN) for l in lines):
+                    start = min(i for i, l in enumerate(lines)
+                                if l.startswith(COMPILATION_ERROR_BEGIN))
+                    end = min(i for i, l in enumerate(lines)
+                              if l.startswith(COMPILATION_ERROR_END))
+                    error_message = COMPILATION_ERROR_TEXT + '\n'.join(lines[start: end])
 
-            if output_started:
-                output.append(line)
+                # Module not found errors (during compilation)
+                elif any(l.startswith(MODULE_ERROR_BEGIN) for l in lines):
+                    start = min(i for i, l in enumerate(lines)
+                                if l.startswith(MODULE_ERROR_BEGIN))
+                    error_message = COMPILATION_ERROR_TEXT + '\n'.join(lines[start:])
 
-        feedback = '\n'.join(output).strip()
+                feedback = error_message
 
-    elif any(line.startswith(FAILED_TEST_BEGIN) for line in stdout):
-        score = 0
-        output = []
-        output_started = False
+            else:
+                feedback = UNEXPECTED_ERROR_TEXT + error_message
 
-        for line in stdout:
-            if output_started and line.startswith(FAILED_TEST_CONTINUE):
-                output.append(line[len(FAILED_TEST_CONTINUE):])
-
-            if not output_started and line.startswith(FAILED_TEST_BEGIN):
-                output_started = True
-                output.append(line[len(FAILED_TEST_BEGIN):])
-
-        feedback = '\n'.join(output).strip()
+        except:
+            feedback = fatal_feedback
 
     result = {
         'score': score,

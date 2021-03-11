@@ -1,4 +1,4 @@
-FROM node:12.18.1-slim
+FROM node:15.10-stretch-slim
 
 RUN apt-get update && \
     apt-get install -y python3 && \
