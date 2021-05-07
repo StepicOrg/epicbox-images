@@ -6,7 +6,7 @@ RUN apt-get update && \
 
 RUN mkdir /checker && \
     curl -L -o /checker/kotlin.zip \
-    https://github.com/JetBrains/kotlin/releases/download/v1.5.0-RC/kotlin-compiler-1.5.0-RC.zip && \
+    https://github.com/JetBrains/kotlin/releases/download/v1.5.0/kotlin-compiler-1.5.0.zip && \
     unzip /checker/kotlin.zip -d /checker && \
     rm /checker/kotlin.zip
 
