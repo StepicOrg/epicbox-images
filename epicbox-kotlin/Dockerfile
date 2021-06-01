@@ -16,8 +16,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends wget unzip && \
 
 ENV PATH $PATH:/usr/lib/kotlinc/bin
 
+COPY kotlinc /usr/lib/kotlinc/bin/kotlinc
 COPY java_lookup_main.sh /usr/local/bin/java_lookup_main.sh
-RUN chmod +x /usr/local/bin/java_lookup_main.sh
+RUN chmod +x /usr/lib/kotlinc/bin/kotlinc /usr/local/bin/java_lookup_main.sh
 
 RUN useradd -M -d /sandbox sandbox
 
