@@ -1,4 +1,4 @@
-FROM gradle:6.5.1-jdk11
+FROM gradle:7.2.0-jdk11
 
 USER root
 RUN apt-get update && \
@@ -9,5 +9,4 @@ USER gradle
 COPY --chown=gradle checker/ /checker/
 
 RUN gradle --info --no-daemon --project-dir=/checker/sandbox test && \
-    cp -r /home/gradle/.gradle /home/gradle/.gradle_cache && \
     rm -rf /checker/sandbox/files/*
