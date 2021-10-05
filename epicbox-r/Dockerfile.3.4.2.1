@@ -1,0 +1,5 @@
+FROM stepik/epicbox-r:3.4.2
+
+# Remove expired DST Root CA X3 certificate
+RUN sed -i "s/mozilla\/DST_Root_CA_X3.crt/!mozilla\/DST_Root_CA_X3.crt/g" /etc/ca-certificates.conf \
+    && update-ca-certificates
