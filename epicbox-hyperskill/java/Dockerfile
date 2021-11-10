@@ -1,4 +1,4 @@
-FROM openjdk:17-slim-bullseye
+FROM openjdk:17-slim
 
 RUN apt-get update && \
     apt-get install --yes python3 unzip curl && \
