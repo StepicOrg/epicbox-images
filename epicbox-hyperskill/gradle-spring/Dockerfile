@@ -1,10 +1,4 @@
-FROM gradle:7.2.0-jdk11
-
-USER root
-RUN apt-get update && \
-    apt-get install --yes python3 && \
-    rm -rf /var/lib/apt/lists/*
-USER gradle
+FROM gradle:7.2-jdk17
 
 COPY --chown=gradle checker/ /checker/
 

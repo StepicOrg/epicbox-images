@@ -1,10 +1,23 @@
-plugins {
-    id 'java'
-    id 'org.springframework.boot' version '2.3.1.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+buildscript {
+    apply plugin: 'hyperskill'
+
+    def javaVersion = Integer.parseInt(JavaVersion.current().getMajorVersion())
+    def bootVersion = (javaVersion == 17) ? hs.spring.bootVersion : "2.3.1.RELEASE"
+    def depsVersion = (javaVersion == 17) ? hs.spring.dependencyManagementVersion : "1.0.9.RELEASE"
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$bootVersion"
+        classpath "io.spring.gradle:dependency-management-plugin:$depsVersion"
+    }
 }
 
-sourceCompatibility = 11
+apply plugin: 'java'
+apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
 
 repositories {
     mavenCentral()
