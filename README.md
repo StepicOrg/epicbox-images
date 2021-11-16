@@ -28,6 +28,7 @@ Images for programming languages:
 * Ruby: [`stepik/epicbox-ruby:2.5.3`](https://hub.docker.com/r/stepik/epicbox-ruby/)
 * Scala: [`stepik/epicbox-scala:2.12.7`](https://hub.docker.com/r/stepik/epicbox-scala/)
 * [TRIK Studio](http://www.trikset.com/): [`stepik/epicbox-trik:20171122`](https://hub.docker.com/r/stepik/epicbox-trik/)
+* Valgrind: [`stepik/epicbox-valgrind:3.12.0`](https://hub.docker.com/r/stepik/epicbox-valgrind/)
 
 Images for source code analyzers:
 * [PMD](https://pmd.github.io): [`stepik/epicbox-pmd:6.9.0`](https://hub.docker.com/r/stepik/epicbox-pmd/)
