@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
                 output.append(line)
 
-            feedback = 'Compilation error\n' + '\n'.join(output).strip()
+            feedback = 'Compilation error\n\n' + '\n'.join(output).strip()
 
         else:
             if any(line.startswith(FAILED_TEST_BEGIN) for line in stdout):
