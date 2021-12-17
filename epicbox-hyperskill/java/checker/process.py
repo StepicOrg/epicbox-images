@@ -12,7 +12,9 @@ KOTLIN_JAR = f'/checker/kotlinc/lib/kotlin-stdlib.jar'
 CLASSES_FOLDER = f'{TASK_ROOT}/out'
 MODULES = [
     f'{TASK_ROOT}/src',
-    f'{TASK_ROOT}/test'
+    f'{TASK_ROOT}/test',
+    f'{TASK_ROOT}/util/src',
+    f'{TASK_ROOT}/util/test',
 ]
 
 COMPILE_OPTIONS = [
