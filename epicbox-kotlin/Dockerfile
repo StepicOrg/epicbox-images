@@ -1,7 +1,7 @@
 FROM openjdk:11.0.11-slim
 MAINTAINER Stepik Team <team@stepik.org>
 
-ARG COMPILER_URL=https://github.com/JetBrains/kotlin/releases/download/v1.5.31/kotlin-compiler-1.5.31.zip
+ARG COMPILER_URL=https://github.com/JetBrains/kotlin/releases/download/v1.6.10/kotlin-compiler-1.6.10.zip
 
 RUN apt-get update && apt-get install -y --no-install-recommends wget unzip \
     libfreetype6 fontconfig && \
