@@ -89,7 +89,7 @@ defusedxml==0.7.1
     # via python3-openid
 dill==0.3.4
     # via apache-airflow
-django==4.0.1
+django==4.0.2
     # via
     #   -r requirements.in
     #   djangorestframework
@@ -108,7 +108,7 @@ docutils==0.16
     #   python-daemon
 email-validator==1.1.3
     # via flask-appbuilder
-factory_boy==3.2.1
+factory-boy==3.2.1
     # via -r requirements.in
 faker==12.0.0
     # via factory-boy
