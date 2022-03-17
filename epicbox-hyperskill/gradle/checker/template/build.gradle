@@ -1,6 +1,6 @@
 plugins {
     id 'application'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.30'
     id 'scala'
 }
 
@@ -13,12 +13,8 @@ repositories {
 
 dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-    implementation 'org.scala-lang:scala-library:2.12.7'
-
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.assertj:assertj-swing-junit:3.8.0'
-    testImplementation 'com.google.code.gson:gson:2.8.5'
-    testImplementation 'com.github.hyperskill:hs-test:v8'
+    implementation 'org.scala-lang:scala-library:2.13.6'
+    testImplementation 'com.github.hyperskill:hs-test:v8.2'
 }
 
 sourceSets {

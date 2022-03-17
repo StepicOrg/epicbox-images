@@ -1,14 +1,10 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-}
 
 subprojects {
+    apply plugin: 'hyperskill'
     apply plugin: 'application'
     apply plugin: 'java'
 
-    sourceCompatibility = 11
+    sourceCompatibility = 17
 
     repositories {
         mavenCentral()
@@ -16,10 +12,7 @@ subprojects {
     }
 
     dependencies {
-        testImplementation 'junit:junit:4.12'
-        testImplementation 'com.google.code.gson:gson:2.8.5'
-        testImplementation 'org.apache.httpcomponents:httpclient:4.5.9'
-        testImplementation 'com.github.hyperskill:hs-test:v8'
+        testImplementation 'com.github.hyperskill:hs-test:v8.2'
     }
 
     sourceSets {
@@ -46,5 +39,18 @@ subprojects {
     compileJava.options.encoding = 'UTF-8'
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
+    }
+}
+
+project(':util') {
+    dependencies {
+        implementation 'com.github.hyperskill:hs-test:v8.2'
+    }
+}
+
+configure(subprojects.findAll {it.name != 'util'}) {
+    dependencies {
+        testImplementation project(':util').sourceSets.main.output
+        testImplementation project(':util').sourceSets.test.output
     }
 }

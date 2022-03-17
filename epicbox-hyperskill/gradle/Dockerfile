@@ -1,14 +1,9 @@
-FROM gradle:5.3.1-jdk11-slim
-
-USER root
-RUN apt-get update && \
-    apt-get install --yes python3 && \
-    rm -rf /var/lib/apt/lists/*
-USER gradle
+FROM gradle:7.3-jdk11
 
 COPY --chown=gradle checker/ /checker/
 
+ENV GRADLE_USER_HOME=/home/gradle/gradle_cache
+
 RUN gradle --no-daemon --project-dir=/checker/template test && \
-    cp -r /home/gradle/.gradle /home/gradle/.gradle_cache && \
     rm -rf /checker/template/src/* && \
     rm -rf /checker/template/test/*

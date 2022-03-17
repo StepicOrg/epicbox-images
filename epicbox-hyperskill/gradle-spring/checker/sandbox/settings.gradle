@@ -1,1 +1,12 @@
+buildscript {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        classpath 'com.github.hyperskill:hs-gradle-plugin:v1.1'
+    }
+}
+
 include "files"
+include "util"
