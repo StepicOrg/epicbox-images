@@ -18,8 +18,8 @@ RUN apt-get update && \
     rm kotlin-compiler-*.zip && \
     rm -f kotlinc/bin/*.bat && \
     cd /usr/lib/kotlinc/lib && \
-    wget -q $KOTLINX_DATETIME_JVM_URL && \
     wget -q $KOTLIN_SERIALIZATION_URL && \
+    wget -q $KOTLINX_DATETIME_JVM_URL && \
     wget -q $KOTLINX_CLI_JVM_URL && \
     wget -q $KOTLINX_ATOMICFU_JVM_URL && \
     apt-get remove -y wget unzip && \
