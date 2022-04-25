@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd /sandbox
 python3 tests.py --inside_docker > stdout.txt 2> stderr.txt

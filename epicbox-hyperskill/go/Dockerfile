@@ -1,9 +1,9 @@
-FROM golang:1.16.5-buster
+FROM golang:1.18-alpine
 
-RUN apt-get update && \
-    apt-get install -y python3 python3-pip && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache python3
 
-RUN pip3 install https://github.com/hyperskill/hs-test-python/archive/v5.tar.gz
+RUN apk add --no-cache python3-dev py3-pip gcc musl-dev linux-headers && \
+    pip3 install https://github.com/hyperskill/hs-test-python/archive/v9.tar.gz && \
+    apk del --no-cache python3-dev py3-pip gcc musl-dev linux-headers
 
-COPY checker/ /checker/
+COPY checker /checker/
