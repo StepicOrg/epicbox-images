@@ -1,10 +1,10 @@
-FROM node:17.1-slim
+FROM node:18-alpine
 
-RUN apt update && \
-    apt install -y --no-install-recommends python3 python3-pip && \
-    pip3 install https://github.com/hyperskill/hs-test-python/archive/v6.tar.gz && \
-    apt remove -y --auto-remove python3-pip && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache python3
+
+RUN apk add --no-cache python3-dev py3-pip gcc musl-dev linux-headers && \
+    pip3 install https://github.com/hyperskill/hs-test-python/archive/v9.tar.gz && \
+    apk del --no-cache python3-dev py3-pip gcc musl-dev linux-headers
 
 RUN npm install -g https://github.com/hyperskill/sync-input/archive/v1.tar.gz
 
