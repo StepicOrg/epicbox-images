@@ -7,6 +7,7 @@ ARG KOTLINX_CLI_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kot
 ARG KOTLINX_DATETIME_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-datetime-jvm/0.3.2/kotlinx-datetime-jvm-0.3.2.jar
 ARG KOTLINX_HTML_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-html-jvm/0.7.5/kotlinx-html-jvm-0.7.5.jar
 ARG KOTLINX_SERIALIZATION_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-core-jvm/1.3.2/kotlinx-serialization-core-jvm-1.3.2.jar
+ARG KOTLINX_SERIALIZATION_JSON_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-json-jvm/1.3.2/kotlinx-serialization-json-jvm-1.3.2.jar
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -24,6 +25,7 @@ RUN apt-get update && \
     wget -q $KOTLINX_DATETIME_JVM_URL && \
     wget -q $KOTLINX_HTML_JVM_URL && \
     wget -q $KOTLINX_SERIALIZATION_JVM_URL && \
+    wget -q $KOTLINX_SERIALIZATION_JSON_JVM_URL && \
     apt-get remove -y wget unzip && \
     apt-get autoremove -y && \
     apt-get clean -y && \
