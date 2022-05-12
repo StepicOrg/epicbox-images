@@ -4,11 +4,14 @@ Dockerfiles to build images used to automatically grade
 
 Base images with created `sandbox (1000:1000)` user:
 * [`stepik/epicbox-base:alpine-3.6`](https://hub.docker.com/r/stepik/epicbox-base/)
+* [`stepik/epicbox-base:bullseye`](https://hub.docker.com/r/stepik/epicbox-base/)
+* [`stepik/epicbox-base:buster`](https://hub.docker.com/r/stepik/epicbox-base/)
 * [`stepik/epicbox-base:stretch`](https://hub.docker.com/r/stepik/epicbox-base/)
 * [`stepik/epicbox-base:jessie`](https://hub.docker.com/r/stepik/epicbox-base/)
 
 Images for programming languages:
 * ASM32, ASM64, C, C++, C++11: [`stepik/epicbox-gcc:6.3.0`](https://hub.docker.com/r/stepik/epicbox-gcc/)
+* C++17, C++20: [`stepik/epicbox-gcc:10.2.1`](https://hub.docker.com/r/stepik/epicbox-gcc/)
 * C#: [`stepik/epicbox-mono:5.0.0`](https://hub.docker.com/r/stepik/epicbox-mono/)
 * Clojure: [`stepik/epicbox-clojure:1.9.0.397`](https://hub.docker.com/r/stepik/epicbox-clojure/)
 * Go: [`stepik/epicbox-go:1.8.1`](https://hub.docker.com/r/stepik/epicbox-go/)
