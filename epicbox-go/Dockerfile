@@ -1,7 +1,18 @@
-FROM stepik/epicbox-base:alpine-3.6
-MAINTAINER Alexander Petrov <alexander.petrov@stepik.org>
+FROM golang:1.18.2-stretch
+MAINTAINER Stepik Team <team@stepik.org>
 
-RUN apk add --no-cache \
-		gcc=6.3.0-r4 \
-		musl-dev=1.1.16-r9 \
-		go=1.8.1-r0
+ENV GO111MODULE=on
+
+RUN useradd -M -d /sandbox sandbox
+
+WORKDIR /sandbox
+
+COPY go.mod go.sum main.go /sandbox/
+
+# Pre-cache modules by compiling main.go
+RUN go mod download && \
+    go mod verify && \
+    go mod tidy && \
+    go run main.go &&  \
+    rm main.go &&  \
+    chmod ugo-w go.mod go.sum
