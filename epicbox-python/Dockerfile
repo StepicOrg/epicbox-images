@@ -1,6 +1,7 @@
-FROM python:3.10.2-slim
+FROM python:3.10.6-slim
 MAINTAINER Alexey Kotenko <alexey.kotenko@stepik.org>
 
+ENV DEBIAN_FRONTEND=noninteractive
 ENV NLTK_DIR=/usr/local/nltk_data
 ENV MYSTEM_DIR=/usr/local/bin
 
@@ -23,11 +24,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxml2-dev \
     libxslt-dev \
     libz-dev \
+    locales \
     pkg-config \
     uuid-dev \
     wget \
     zlib1g-dev \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && sed -i '/\(en_US.UTF-8\|ru_RU.UTF-8\)/s/^# //g' /etc/locale.gen \
+    && locale-gen
 
 COPY requirements.txt /tmp
 
