@@ -6,7 +6,8 @@ RUN apt-get update && \
     apt-get install --yes sqlite3 && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install https://github.com/hyperskill/hs-test-python/archive/v9.tar.gz
-RUN pip install GitPython==3.1.27
+RUN pip install --no-cache \
+  https://github.com/hyperskill/hs-test-python/archive/v9.tar.gz \
+  GitPython==3.1.27
 
 COPY checker/ /checker/
