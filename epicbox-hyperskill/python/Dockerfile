@@ -4,6 +4,7 @@ RUN apt-get update && \
     apt-get install --yes bc && \
     apt-get install --yes git && \
     apt-get install --yes sqlite3 && \
+    apt-get install --yes curl && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache \
