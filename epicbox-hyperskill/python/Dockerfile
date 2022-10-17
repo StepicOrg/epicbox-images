@@ -3,9 +3,10 @@ FROM python:3.10-slim
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends \
       bc \
+      curl \
       git \
       sqlite3 \
-      curl \
+      wget \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache \
