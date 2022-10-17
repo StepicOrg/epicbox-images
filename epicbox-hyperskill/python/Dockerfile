@@ -1,11 +1,12 @@
 FROM python:3.10-slim
 
 RUN apt-get update && \
-    apt-get install --yes bc && \
-    apt-get install --yes git && \
-    apt-get install --yes sqlite3 && \
-    apt-get install --yes curl && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install --yes --no-install-recommends \
+      bc \
+      git \
+      sqlite3 \
+      curl \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache \
   https://github.com/hyperskill/hs-test-python/archive/v9.tar.gz \
