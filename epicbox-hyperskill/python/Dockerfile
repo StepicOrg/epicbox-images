@@ -10,7 +10,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache \
-  https://github.com/hyperskill/hs-test-python/archive/v9.tar.gz \
+  https://github.com/hyperskill/hs-test-python/archive/v10.tar.gz \
   GitPython==3.1.27
 
 COPY checker/ /checker/
