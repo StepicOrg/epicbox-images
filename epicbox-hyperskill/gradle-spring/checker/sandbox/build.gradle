@@ -12,7 +12,7 @@ subprojects {
     }
 
     dependencies {
-        testImplementation 'com.github.hyperskill:hs-test:v8.2'
+        testImplementation 'com.github.hyperskill:hs-test:v10.0.0'
     }
 
     sourceSets {
@@ -44,7 +44,7 @@ subprojects {
 
 project(':util') {
     dependencies {
-        implementation 'com.github.hyperskill:hs-test:v8.2'
+        implementation 'com.github.hyperskill:hs-test:v10.0.0'
     }
 }
 
