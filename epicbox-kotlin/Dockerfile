@@ -1,7 +1,7 @@
 FROM openjdk:11.0.11-slim
 MAINTAINER Stepik Team <team@stepik.org>
 
-ARG COMPILER_URL=https://github.com/JetBrains/kotlin/releases/download/v1.6.21/kotlin-compiler-1.6.21.zip
+ARG COMPILER_URL=https://github.com/JetBrains/kotlin/releases/download/v1.8.20/kotlin-compiler-1.8.20.zip
 ARG KOTLINX_ATOMICFU_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/atomicfu-jvm/0.17.1/atomicfu-jvm-0.17.1.jar
 ARG KOTLINX_CLI_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-cli-jvm/0.3.4/kotlinx-cli-jvm-0.3.4.jar
 ARG KOTLINX_DATETIME_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-datetime-jvm/0.3.2/kotlinx-datetime-jvm-0.3.2.jar
