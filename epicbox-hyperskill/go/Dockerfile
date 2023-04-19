@@ -17,4 +17,10 @@ RUN curl -L -o /checker/hs-test.jar \
 
 ENV PATH="/checker/kotlinc/bin:$PATH"
 
+WORKDIR /checker
+
+COPY go.mod /checker/
+
+RUN go mod download
+
 COPY checker /checker/
