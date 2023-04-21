@@ -25,4 +25,4 @@ RUN go mod download
 
 COPY checker /checker/
 
-WORKDIR /
+WORKDIR /go
