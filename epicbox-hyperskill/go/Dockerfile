@@ -19,6 +19,8 @@ RUN curl -L -o /checker/hs-test.jar \
 
 ENV PATH="/checker/kotlinc/bin:$PATH"
 
+COPY checker /checker/
+
 WORKDIR /sandbox
 RUN go mod init sandbox && \
     go get github.com/gin-gonic/gin@v1.8.2 && \
@@ -29,3 +31,5 @@ RUN go mod init sandbox && \
     go get go.uber.org/zap@v1.24.0
 
 WORKDIR /go
+
+RUN mv /sandbox /sandbox_tmp
