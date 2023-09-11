@@ -8,7 +8,7 @@ RUN apk add --no-cache python3-dev py3-pip gcc musl-dev linux-headers && \
 
 RUN mkdir /checker && \
     curl -L -o /checker/kotlin.zip \
-    https://github.com/JetBrains/kotlin/releases/download/v1.8.20/kotlin-compiler-1.8.20.zip && \
+    https://github.com/JetBrains/kotlin/releases/download/v1.9.10/kotlin-compiler-1.9.10.zip && \
     unzip /checker/kotlin.zip -d /checker && \
     rm /checker/kotlin.zip
 
