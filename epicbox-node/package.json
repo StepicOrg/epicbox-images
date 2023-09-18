@@ -1,0 +1,8 @@
+{
+  "name": "epicbox-settings",
+  "version": "0.0.1",
+  "description": "Add epicbox settings at startup.",
+  "main": "./epicbox-settings.js",
+  "author": "team@stepik.org",
+  "license": "ISC"
+}
