@@ -21,6 +21,6 @@ jobs:
         uses: ./.github/workflows/actions/build
         with:
           path: epicbox-base/debian/bullseye
-          image_tag: debian:bullseye-${{ github.sha }}
+          image_name_tag: debian:bullseye-${{ github.sha }}
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
