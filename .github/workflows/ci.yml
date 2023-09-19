@@ -22,3 +22,5 @@ jobs:
         with:
           path: epicbox-base/debian/bullseye
           image_tag: debian:bullseye-${{ github.sha }}
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}

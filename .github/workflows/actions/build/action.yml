@@ -11,6 +11,12 @@ inputs:
   image_name_tag:
     description: 'Image name:tag'
     required: true
+  username:
+    description: 'Registry username'
+    required: true
+  password:
+    description: 'Registry password'
+    required: true
 
 runs:
   using: "composite"
@@ -23,8 +29,8 @@ runs:
       uses: docker/login-action@v2
       with:
         registry: hyperskill.azurecr.io
-        username: ${{ secrets.REGISTRY_USER }}
-        password: ${{ secrets.REGISTRY_PASSWORD }}
+        username: ${{ inputs.username }}
+        password: ${{ inputs.password }}
     - name: Build base
       uses: docker/build-push-action@v3
       with:
