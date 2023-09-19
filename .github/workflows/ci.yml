@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches:
+      - 'master'
+      - 'release/**'
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: ${{ github.ref_name != github.event.repository.default_branch }}
+
+jobs:
+  build_epicbox_base:
+    name: Build epicbox-base image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-base/debian/bullseye
+          image_tag: debian:bullseye-${{ github.sha }}
