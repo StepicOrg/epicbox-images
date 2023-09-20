@@ -34,6 +34,19 @@ jobs:
         uses: ./.github/workflows/actions/build
         with:
           path: epicbox-clojure
-          image_name_tag: clojure:1.9.0.397
+          image_name_tag: clojure:1.9.0.397-${{ hashFiles('epicbox-clojure/Dockerfile') }}
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_gcc_image:
+    name: Build epicbox-gcc image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-gcc
+          image_name_tag: gcc:10.2.1-${{ hashFiles('epicbox-gcc/Dockerfile') }}
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
