@@ -40,6 +40,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_gcc_image:
     name: Build epicbox-gcc image
+    needs: build_debian_image
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
@@ -235,6 +236,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_mono_image:
     name: Build epicbox/mono image
+    needs: build_debian_image
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
@@ -248,6 +250,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_nasm_image:
     name: Build epicbox/nasm image
+    needs: build_debian_image
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
@@ -274,6 +277,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_octave_image:
     name: Build epicbox/octave image
+    needs: build_debian_image
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
@@ -287,6 +291,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_perl_image:
     name: Build epicbox/perl image
+    needs: build_debian_image
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
@@ -404,6 +409,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_valgrind_image:
     name: Build epicbox/valgrind image
+    needs: build_debian_image
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
