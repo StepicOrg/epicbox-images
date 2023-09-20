@@ -37,7 +37,7 @@ runs:
         password: ${{ inputs.password }}
     - if: ${{ inputs.add_hash }}
       run: |
-        hash=$(find ${{ inputs.path }} -type f -print0 | sort -z | xargs -0 sha2sum | sha2sum)
+        hash=$(find ${{ inputs.path }} -type f -print0 | sort -z | xargs -0 sha1sum | sha1sum)
         echo "hash=-${hash::9}" >> "$GITHUB_ENV"
       shell: bash
     - if: ${{ !inputs.add_hash }}
