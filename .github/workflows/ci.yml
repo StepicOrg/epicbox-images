@@ -313,19 +313,6 @@ jobs:
           image_name_tag: ruby:2.5.3
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_scala2_image:
-    name: Build epicbox/scala2 image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-scala/2
-          image_name_tag: scala:2.12.7
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
   build_scala3_image:
     name: Build epicbox/scala3 image
     runs-on: [self-hosted, small]
