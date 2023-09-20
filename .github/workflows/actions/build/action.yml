@@ -17,6 +17,10 @@ inputs:
   password:
     description: 'Registry password'
     required: true
+  add_hash:
+    description: 'Add hash to tag'
+    required: true
+    default: true
 
 runs:
   using: "composite"
@@ -31,6 +35,13 @@ runs:
         registry: hyperskill.azurecr.io
         username: ${{ inputs.username }}
         password: ${{ inputs.password }}
+    - run: |
+        hash=${{ hashFiles(inputs.path + '/**/*.*')
+        echo "hash=-${hash::9}" >> "$GITHUB_ENV"
+      if: inputs.add_hash
+    - run: |
+        echo "hash=" >> "$GITHUB_ENV"
+      if: !inputs.add_hash
     - name: Build base
       uses: docker/build-push-action@v3
       with:
@@ -38,6 +49,6 @@ runs:
         pull: true
         push: true
         file: ${{ inputs.path }}/${{ inputs.dockerfile }}
-        tags: hyperskill.azurecr.io/epicbox/${{ inputs.image_name_tag }}
+        tags: hyperskill.azurecr.io/epicbox/${{ inputs.image_name_tag }}${{ env.hash }}
         cache-from: type=gha
         cache-to: type=gha,mode=max

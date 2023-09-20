@@ -24,6 +24,7 @@ jobs:
           image_name_tag: debian:bullseye
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
+          add_hash: false
   build_clojure_image:
     name: Build epicbox-clojure image
     runs-on: [self-hosted, small]
