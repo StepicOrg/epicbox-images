@@ -64,3 +64,107 @@ jobs:
           image_name_tag: go:1.18.2.1
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_haskell_image:
+    name: Build epicbox-haskell image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-haskell
+          image_name_tag: haskell:8.8.4
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_hyperskill_go_image:
+    name: Build epicbox-hyperskill/go image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-hyperskill/go
+          image_name_tag: hyperskill-go:1.18.2
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_hyperskill_gradle_image:
+    name: Build epicbox-hyperskill/gradle image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-hyperskill/gradle
+          image_name_tag: hyperskill-gradle:7.3-jdk11
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_hyperskill_gradle_spring_image:
+    name: Build epicbox-hyperskill/gradle-spring image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-hyperskill/gradle-spring
+          image_name_tag: hyperskill-gradle-spring:7.3-jdk17
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_hyperskill_java_image:
+    name: Build epicbox-hyperskill/java image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-hyperskill/java
+          image_name_tag: hyperskill-java:17
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_hyperskill_node_image:
+    name: Build epicbox-hyperskill/node image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-hyperskill/node
+          image_name_tag: hyperskill-node:18.17.1
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_hyperskill_node_javascript_image:
+    name: Build epicbox-hyperskill/node-javascript image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-hyperskill/node-javascript
+          image_name_tag: hyperskill-node-javascript:18.17.1
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_hyperskill_python_image:
+    name: Build epicbox-hyperskill/python image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-hyperskill/python
+          image_name_tag: hyperskill-python:3.10
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
