@@ -1,5 +1,4 @@
-FROM stepik/epicbox-base:stretch
-MAINTAINER Stepik Team <team@stepik.org>
+FROM hyperskill.azurecr.io/epicbox/debian:bullseye
 
 ENV VALGRIND_VERSION 3.12.0~svn20160714-1+b1
 

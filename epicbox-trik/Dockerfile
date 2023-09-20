@@ -1,5 +1,4 @@
 FROM ubuntu:14.04
-MAINTAINER Pavel Sviderski <ps@stepic.org>
 
 RUN useradd -M -d /sandbox sandbox
 RUN  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1E9377A2BA9EF27F \

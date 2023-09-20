@@ -1,5 +1,4 @@
 FROM r-base:3.4.2
-MAINTAINER Pavel Sviderski <ps@stepik.org>
 
 RUN useradd -M -d /sandbox sandbox
 

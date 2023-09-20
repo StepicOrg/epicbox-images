@@ -3,7 +3,6 @@ import subprocess
 import sys
 import traceback
 
-
 TASK_ROOT = '/sandbox'
 
 all_stdout = []

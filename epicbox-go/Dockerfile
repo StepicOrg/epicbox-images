@@ -1,5 +1,4 @@
 FROM golang:1.18.2-stretch
-MAINTAINER Stepik Team <team@stepik.org>
 
 ENV GO111MODULE=on
 

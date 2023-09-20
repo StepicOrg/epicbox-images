@@ -428,13 +428,13 @@ sqlalchemy-utils==0.38.2
     # via flask-appbuilder
 sqlparse==0.4.2
     # via django
-stepic-bioinformatics @ https://github.com/StepicOrg/stepik-bioinformatics/archive/1.0.0.zip
+stepic-bioinformatics@ https://github.com/StepicOrg/stepik-bioinformatics/archive/1.0.0.zip
     # via -r requirements.in
-stepic-common @ https://github.com/StepicOrg/stepik-common/archive/1.0.0.zip
+stepic-common@ https://github.com/StepicOrg/stepik-common/archive/1.0.0.zip
     # via -r requirements.in
-stepic-utils @ https://github.com/StepicOrg/stepik-utils/archive/1.2.0.zip
+stepic-utils@ https://github.com/StepicOrg/stepik-utils/archive/1.2.0.zip
     # via -r requirements.in
-stepik-alignment @ https://github.com/StepicOrg/stepik-alignment/archive/1.1.0.zip
+stepik-alignment@ https://github.com/StepicOrg/stepik-alignment/archive/1.1.0.zip
     # via -r requirements.in
 sumy==0.9.0
     # via -r requirements.in

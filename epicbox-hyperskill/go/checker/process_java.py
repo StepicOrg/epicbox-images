@@ -2,7 +2,6 @@ import os
 
 from util import finish, finish_badly, run_process, TASK_ROOT
 
-
 HSTEST_JAR = f'/checker/hs-test.jar'
 KOTLIN_JAR = f'/checker/kotlinc/lib/kotlin-stdlib.jar'
 

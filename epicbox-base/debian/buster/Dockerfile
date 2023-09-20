@@ -1,5 +1,4 @@
 FROM bitnami/minideb:buster
-MAINTAINER Konstantin Shestakov <konstantin.shestakov@stepik.org>
 
 RUN apt-get update && apt-get install -y --no-install-recommends locales \
  && rm -rf /var/lib/apt/lists/* \

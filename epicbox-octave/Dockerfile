@@ -1,5 +1,4 @@
-FROM stepik/epicbox-base:stretch
-MAINTAINER Pavel Sviderski <ps@stepik.org>
+FROM hyperskill.azurecr.io/epicbox/debian:bullseye
 
 ENV OCTAVE_VERSION 4.0.3-3
 ENV SYMBOLIC_VERSION 2.6.0

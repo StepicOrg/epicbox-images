@@ -1,5 +1,4 @@
 FROM openjdk:8u181-alpine
-MAINTAINER Stepik Team <ab@stepik.org>
 
 ENV PMD_VERSION 6.9.0
 ENV PATH /opt/pmd/bin:$PATH

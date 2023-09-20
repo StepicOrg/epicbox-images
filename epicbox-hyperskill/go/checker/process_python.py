@@ -2,7 +2,6 @@ import os.path
 
 from util import TASK_ROOT, finish, finish_badly, run_process
 
-
 FAILED_TEST_BEGIN = '#educational_plugin FAILED + '
 FAILED_TEST_CONTINUE = '#educational_plugin '
 

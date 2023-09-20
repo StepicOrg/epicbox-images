@@ -1,5 +1,4 @@
 FROM bitnami/minideb:bullseye
-MAINTAINER Stepik Team <team@stepik.org>
 
 RUN apt-get update && apt-get install -y --no-install-recommends locales \
   && rm -rf /var/lib/apt/lists/* \

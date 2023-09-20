@@ -1,5 +1,4 @@
 FROM openjdk:8u181-slim
-MAINTAINER Stepik Team <ab@stepik.org>
 
 ENV SCALA_VERSION 2.12.7
 ENV PATH /opt/scala-$SCALA_VERSION/bin:$PATH

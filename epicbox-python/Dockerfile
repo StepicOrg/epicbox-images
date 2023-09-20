@@ -1,5 +1,4 @@
 FROM python:3.10.6-slim
-MAINTAINER Alexey Kotenko <alexey.kotenko@stepik.org>
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV NLTK_DIR=/usr/local/nltk_data

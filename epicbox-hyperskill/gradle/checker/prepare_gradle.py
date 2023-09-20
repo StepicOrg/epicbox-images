@@ -5,11 +5,11 @@ BUILD_GRADLE = '/sandbox/build.gradle'
 
 TO_COMMENT = {
     '.kt': [
-        "id 'org.jetbrains.kotlin.jvm'", 
+        "id 'org.jetbrains.kotlin.jvm'",
         "implementation 'org.jetbrains.kotlin:"
     ],
     '.scala': [
-        "id 'scala'", 
+        "id 'scala'",
         "implementation 'org.scala-lang:scala-library:",
         "scala.srcDir 'src'",
         "scala.srcDir 'test'"

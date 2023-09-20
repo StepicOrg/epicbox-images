@@ -1,5 +1,4 @@
 FROM hyperskill.azurecr.io/epicbox/debian:bullseye
-MAINTAINER Pavel Sviderski <ps@stepik.org>
 
 ENV JAVA_INSTALLER_VERSION 9.0.1-1~webupd8~0
 

@@ -27,7 +27,7 @@ if __name__ == '__main__':
         'has fallen into an infinite loop or created too many objects in memory. '
         'If you are sure that this is not the case, please send the report to support@hyperskill.org\n'
         'stdout:\n{stdout}\n\nstderr:\n{stderr}'
-            .format(stdout=stdout, stderr=stderr)
+        .format(stdout=stdout, stderr=stderr)
     )
 
     try:
@@ -46,7 +46,8 @@ if __name__ == '__main__':
     else:
         score = 0
         try:
-            error_message = stdout_json["testResults"][0]["assertionResults"][0]["failureMessages"][0]
+            error_message = stdout_json["testResults"][0]["assertionResults"][0]["failureMessages"][
+                0]
 
             if error_message.startswith(FAILED_TEST_BEGIN) and FAILED_TEST_END in error_message:
                 start = len(FAILED_TEST_BEGIN)

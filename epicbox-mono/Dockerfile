@@ -1,5 +1,4 @@
-FROM stepik/epicbox-base:buster
-MAINTAINER Alexander Petrov <alexander.petrov@stepik.org>
+FROM hyperskill.azurecr.io/epicbox/debian:bullseye
 
 ENV MONO_VERSION 6.10.0.104
 

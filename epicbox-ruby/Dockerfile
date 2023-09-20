@@ -1,5 +1,4 @@
 FROM ruby:2.5.3-alpine
-MAINTAINER Stepik Team <ab@stepik.org>
 
 RUN adduser -DH -h /sandbox sandbox && \
     apk add --no-cache --virtual build-dependencies build-base && \

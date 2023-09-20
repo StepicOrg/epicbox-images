@@ -1,5 +1,4 @@
-FROM stepik/epicbox-base:buster
-MAINTAINER Konstantin Shestakov <konstantin.shestakov@stepik.org>
+FROM hyperskill.azurecr.io/epicbox/debian:bullseye
 
 ENV VERSION 2.14-1
 

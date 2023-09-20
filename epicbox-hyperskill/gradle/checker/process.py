@@ -19,11 +19,11 @@ if __name__ == '__main__':
             'has fallen into an infinite loop or created too many objects in memory. '
             'If you are sure that this is not the case, please send the report to support@hyperskill.org\n'
             'stdout:\n{stdout}\n\nstderr:\n{stderr}'
-                .format(stdout='\n'.join(stdout), stderr='\n'.join(stderr))
+            .format(stdout='\n'.join(stdout), stderr='\n'.join(stderr))
         )
 
         if any(line.startswith('> Compilation failed') or  # detect java and scala compile error
-               line.startswith('> Compilation error.')     # detect kotlin compile error
+               line.startswith('> Compilation error.')  # detect kotlin compile error
                for line in stderr):
             output = []
 

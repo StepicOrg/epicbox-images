@@ -1,5 +1,4 @@
 FROM hyperskill.azurecr.io/epicbox/debian:bullseye
-MAINTAINER Stepik Team <team@stepik.org>
 
 ENV GCC_VERSION 10.2.1-1
 
