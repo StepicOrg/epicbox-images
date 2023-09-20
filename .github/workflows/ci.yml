@@ -285,19 +285,6 @@ jobs:
           image_name_tag: octave:4.0.3
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_octave_image:
-    name: Build epicbox/octave image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-octave
-          image_name_tag: octave:4.0.3
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
   build_perl_image:
     name: Build epicbox/perl image
     runs-on: [self-hosted, small]
