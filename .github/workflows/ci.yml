@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: ${{ github.ref_name != github.event.repository.default_branch }}
 
 jobs:
-  build_bash_image:
-    name: Build epicbox-base image
+  build_debian_image:
+    name: Build epicbox/debian image
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
@@ -20,7 +20,7 @@ jobs:
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
-          path: epicbox-base/debian/bullseye
+          path: epicbox-debian
           image_name_tag: debian:bullseye
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
@@ -218,5 +218,213 @@ jobs:
         with:
           path: epicbox-java/17
           image_name_tag: java:17.0.1
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_kotlin_image:
+    name: Build epicbox/kotlin image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-kotlin
+          image_name_tag: kotlin:1.9.10
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_mono_image:
+    name: Build epicbox/mono image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-mono
+          image_name_tag: mono:6.10.0.104
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_nasm_image:
+    name: Build epicbox/nasm image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-nasm
+          image_name_tag: nasm:2.14
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_node_image:
+    name: Build epicbox/node image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-node
+          image_name_tag: node:18.17.1
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_octave_image:
+    name: Build epicbox/octave image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-octave
+          image_name_tag: octave:4.0.3
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_octave_image:
+    name: Build epicbox/octave image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-octave
+          image_name_tag: octave:4.0.3
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_perl_image:
+    name: Build epicbox/perl image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-perl
+          image_name_tag: perl:5.24.3
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_php_image:
+    name: Build epicbox/php image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-php
+          image_name_tag: php:7.2.6
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_pmd_image:
+    name: Build epicbox/pmd image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-pmd
+          image_name_tag: pmd:6.9.0
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_python_310_image:
+    name: Build epicbox/python 3.10 image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-python
+          image_name_tag: python:3.10.6
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_r_image:
+    name: Build epicbox/r image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-r
+          image_name_tag: r:3.4.2
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_ruby_image:
+    name: Build epicbox/ruby image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-ruby
+          image_name_tag: ruby:2.5.3
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_scala2_image:
+    name: Build epicbox/scala2 image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-scala/2
+          image_name_tag: scala:2.12.7
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_scala3_image:
+    name: Build epicbox/scala3 image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-scala/3
+          image_name_tag: scala:3.0.0
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_typescript_image:
+    name: Build epicbox/typescript image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-typescript
+          image_name_tag: typescript:4.8.4
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_valgrind_image:
+    name: Build epicbox/valgrind image
+    runs-on: [self-hosted, small]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-valgrind
+          image_name_tag: valgrind:3.12.0
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
