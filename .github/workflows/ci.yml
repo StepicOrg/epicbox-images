@@ -248,20 +248,6 @@ jobs:
           image_name_tag: mono:6.10.0.104
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_nasm_image:
-    name: Build epicbox/nasm image
-    needs: build_debian_image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-nasm
-          image_name_tag: nasm:2.14
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
   build_node_image:
     name: Build epicbox/node image
     runs-on: [self-hosted, small]
@@ -273,34 +259,6 @@ jobs:
         with:
           path: epicbox-node
           image_name_tag: node:18.17.1
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_octave_image:
-    name: Build epicbox/octave image
-    needs: build_debian_image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-octave
-          image_name_tag: octave:4.0.3
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_perl_image:
-    name: Build epicbox/perl image
-    needs: build_debian_image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-perl
-          image_name_tag: perl:5.24.3
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_php_image:
@@ -340,19 +298,6 @@ jobs:
         with:
           path: epicbox-python
           image_name_tag: python:3.10.6
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_r_image:
-    name: Build epicbox/r image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-r
-          image_name_tag: r:3.4.2
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_ruby_image:
@@ -405,19 +350,5 @@ jobs:
         with:
           path: epicbox-typescript
           image_name_tag: typescript:4.8.4
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_valgrind_image:
-    name: Build epicbox/valgrind image
-    needs: build_debian_image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-valgrind
-          image_name_tag: valgrind:3.12.0
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
