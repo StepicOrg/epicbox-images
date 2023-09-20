@@ -34,7 +34,7 @@ jobs:
         uses: ./.github/workflows/actions/build
         with:
           path: epicbox-clojure
-          image_name_tag: clojure:1.9.0.397-${{ hashFiles('epicbox-clojure/Dockerfile') }}
+          image_name_tag: clojure:1.9.0.397-${{ hashFiles('epicbox-clojure/Dockerfile').slice(0,9) }}
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_gcc_image:
@@ -47,6 +47,6 @@ jobs:
         uses: ./.github/workflows/actions/build
         with:
           path: epicbox-gcc
-          image_name_tag: gcc:10.2.1-${{ hashFiles('epicbox-gcc/Dockerfile') }}
+          image_name_tag: gcc:10.2.1-${{ hashFiles('epicbox-gcc/Dockerfile').slice(0,9) }}
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
