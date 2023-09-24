@@ -288,7 +288,7 @@ jobs:
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_python_310_image:
-    name: Build epicbox/python3.10 image
+    name: Build epicbox/python 3.10 image
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
@@ -296,23 +296,10 @@ jobs:
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
-          path: epicbox-python/310
+          path: epicbox-python
           image_name_tag: python:3.10.6
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_python_311_image:
-  name: Build epicbox/python3.11 image
-  runs-on: [self-hosted, small]
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Build
-      uses: ./.github/workflows/actions/build
-      with:
-        path: epicbox-python/311
-        image_name_tag: python:3.11.5
-        username: ${{ secrets.REGISTRY_USER }}
-        password: ${{ secrets.REGISTRY_PASSWORD }}
   build_ruby_image:
     name: Build epicbox/ruby image
     runs-on: [self-hosted, small]
