@@ -323,7 +323,7 @@ jobs:
         uses: ./.github/workflows/actions/build
         with:
           path: epicbox-scala/2
-          image_name_tag: scala:2.12.7
+          image_name_tag: scala:2.13.12
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_scala3_image:
