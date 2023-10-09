@@ -1,5 +1,7 @@
 FROM python:3.10-slim
 
+ENV INSIDE_DOCKER=1
+
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends \
       bc \

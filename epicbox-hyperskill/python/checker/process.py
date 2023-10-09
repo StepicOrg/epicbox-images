@@ -20,10 +20,6 @@ if __name__ == '__main__':
             .format(stdout='\n'.join(stdout), stderr='\n'.join(stderr))
         )
         if stderr[0] == 'F':
-            for line in stdout:
-                if line.startswith('F'):
-                    continue
-                output.append(line)
             for line in stderr:
                 if line.startswith('F'):
                     continue
