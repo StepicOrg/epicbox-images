@@ -3,7 +3,7 @@ FROM node:18.17.1-alpine
 RUN apk add --no-cache python3 openjdk17-jdk curl bash
 
 RUN apk add --no-cache python3-dev py3-pip gcc musl-dev linux-headers && \
-    pip3 install https://github.com/hyperskill/hs-test-python/archive/v10.0.1.tar.gz && \
+    pip3 install https://github.com/hyperskill/hs-test-python/archive/v10.0.2.tar.gz && \
     apk del --no-cache python3-dev py3-pip gcc musl-dev linux-headers
 
 RUN mkdir /checker && \
