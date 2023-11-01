@@ -1,4 +1,4 @@
-FROM php:7.2.6-cli-alpine3.7
-MAINTAINER Pavel Sviderski <ps@stepik.org>
+FROM php:8.2.11-cli-alpine3.18
+MAINTAINER Stepik Team <team@stepik.org>
 
 RUN adduser -DH -h /sandbox sandbox
