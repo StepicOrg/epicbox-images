@@ -1,5 +1,5 @@
 FROM ruby:3.2.2-alpine3.18
-MAINTAINER Stepik Team <team@stepik.org>
+LABEL maintainer="Stepik Team <team@stepik.org>"
 
 RUN adduser -DH -h /sandbox sandbox
 
