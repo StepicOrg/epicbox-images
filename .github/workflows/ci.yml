@@ -90,6 +90,20 @@ jobs:
           image_name_tag: hyperskill-go:1.18.2
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_hyperskill_gcc_image:
+    name: Build epicbox-hyperskill/gcc image
+    needs: build_debian_image
+    runs-on: [ self-hosted, small ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-hyperskill/gcc
+          image_name_tag: hyperskill-gcc:10.2.1
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_gradle_image:
     name: Build epicbox-hyperskill/gradle image
     runs-on: [self-hosted, small]
