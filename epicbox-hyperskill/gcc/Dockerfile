@@ -1,4 +1,4 @@
-FROM hyperskill.azurecr.io/epicbox/debian:bullseye
+FROM debian:bullseye
 
 ENV GCC_VERSION 10.2.1-1
 
@@ -11,6 +11,7 @@ RUN apt-get update \
     gcc-multilib=4:${GCC_VERSION} \
     g++=4:${GCC_VERSION} \
     make \
+    openjdk-17-jdk \
     python3 \
     python3-dev \
     python3-pip \
