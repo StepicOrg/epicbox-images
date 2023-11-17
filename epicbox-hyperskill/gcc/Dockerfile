@@ -30,3 +30,5 @@ RUN apt-get update \
 ENV PATH="/checker/kotlinc/bin:$PATH"
 
 COPY checker /checker/
+
+RUN chmod +x /checker/check.sh
