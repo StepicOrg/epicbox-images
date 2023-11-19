@@ -378,3 +378,45 @@ jobs:
           image_name_tag: typescript:4.8.4
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
+
+  clean_untagged_images:
+    name: Clean untagged images
+    needs: 
+      - build_clojure_image
+      - build_debian_image
+      - build_gcc_image
+      - build_go_image
+      - build_haskell_image
+      - build_hyperskill_gcc_image
+      - build_hyperskill_go_image
+      - build_hyperskill_gradle_image
+      - build_hyperskill_gradle_spring_image
+      - build_hyperskill_java_image
+      - build_hyperskill_node_image
+      - build_hyperskill_node_javascript_image
+      - build_hyperskill_python_image
+      - build_java7_image
+      - build_java8_image
+      - build_java11_image
+      - build_java17_image
+      - build_kotlin_image
+      - build_mono_image
+      - build_node_image
+      - build_php_image
+      - build_pmd_image
+      - build_python_310_image
+      - build_python_311_image
+      - build_ruby_image
+      - build_scala2_image
+      - build_scala3_image
+      - build_typescript_image
+    runs-on: [self-hosted, small]
+    steps:
+      - uses: hyperskill/azure-purge-untagged@v1.0.0
+        with:
+          client_id: ${{ secrets.CLIENT_ID }}
+          client_secret: ${{ secrets.CLIENT_SECRET }}
+          subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
+          tenant_id: ${{ secrets.TENANT_ID }}
+          repository_filter: epicbox/.*
+          registry: hyperskill
