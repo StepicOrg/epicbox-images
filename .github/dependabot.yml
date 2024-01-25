@@ -11,7 +11,169 @@ updates:
         patterns: [ "*" ]
 
   - package-ecosystem: "docker"
-    directory: "/"
+    directory: "/epicbox-clojure"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-debian"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-gcc"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-go"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-haskell"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-hyperskill/gcc"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-hyperskill/go"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-hyperskill/gradle"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-hyperskill/gradle-spring"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-hyperskill/java"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-hyperskill/node"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-hyperskill/node-javascript"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-hyperskill/python"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-java/7"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-java/8"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-java/11"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-java/17"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-kotlin"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-mono"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-node"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-php"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-pmd"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-python/310"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-python/311"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-ruby"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-scala/2"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-scala/3"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
+  - package-ecosystem: "docker"
+    directory: "/epicbox-typescript"
     schedule:
       interval: "weekly"
       day: "monday"
