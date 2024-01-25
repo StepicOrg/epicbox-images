@@ -1,4 +1,4 @@
-FROM openjdk:17.0.1-slim
+FROM openjdk:18.0.2-slim
 
 ARG COMPILER_URL=https://github.com/JetBrains/kotlin/releases/download/v1.9.10/kotlin-compiler-1.9.10.zip
 ARG KOTLINX_ATOMICFU_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/atomicfu-jvm/0.22.0/atomicfu-jvm-0.22.0.jar
