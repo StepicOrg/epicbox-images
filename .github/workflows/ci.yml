@@ -15,7 +15,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -29,7 +29,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -43,7 +43,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -56,7 +56,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -69,7 +69,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -82,7 +82,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -96,7 +96,7 @@ jobs:
     runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -109,7 +109,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -122,7 +122,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -135,7 +135,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -148,7 +148,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -161,7 +161,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -174,7 +174,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -187,7 +187,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -200,7 +200,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -213,7 +213,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -226,7 +226,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -239,7 +239,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -253,7 +253,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -266,7 +266,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -279,7 +279,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -292,7 +292,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -305,7 +305,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -318,7 +318,7 @@ jobs:
     runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -331,7 +331,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -344,7 +344,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -357,7 +357,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -370,7 +370,7 @@ jobs:
     runs-on: [self-hosted, small]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
@@ -412,7 +412,7 @@ jobs:
       - build_typescript_image
     runs-on: [self-hosted, small]
     steps:
-      - uses: hyperskill/azure-purge-untagged@v1.0.0
+      - uses: hyperskill/azure-purge-untagged@v2.0.0
         with:
           client_id: ${{ secrets.CLIENT_ID }}
           client_secret: ${{ secrets.CLIENT_SECRET }}
