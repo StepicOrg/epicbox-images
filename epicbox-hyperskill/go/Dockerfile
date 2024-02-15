@@ -1,15 +1,25 @@
-FROM golang:1.21.6-alpine
+FROM golang:1.21-bullseye
 
 ENV GO111MODULE=on
 
-RUN apk add --no-cache python3 openjdk17-jdk curl bash
-
-RUN apk add --no-cache python3-dev py3-pip gcc musl-dev linux-headers && \
-    python3 -m venv /venv && \
-    . /venv/bin/activate && \
-    pip install aiosmtpd beautifulsoup4 pyyaml && \
-    pip install https://github.com/hyperskill/hs-test-python/archive/v11.0.0.tar.gz && \
-    apk del --no-cache python3-dev py3-pip linux-headers
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-venv \
+    python3-pip \
+    openjdk-17-jdk \
+    curl \
+    bash \
+    gcc \
+    linux-headers-amd64 \
+    unzip \
+    && python3 -m venv /venv \
+    && . /venv/bin/activate \
+    && pip install aiosmtpd beautifulsoup4 pyyaml \
+    && pip install https://github.com/hyperskill/hs-test-python/archive/v11.0.0.tar.gz \
+    && apt-get remove -y gcc python3-dev linux-headers-amd64 \
+    && apt-get autoremove -y \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 RUN mkdir /checker && \
     curl -L -o /checker/kotlin.zip \
@@ -17,13 +27,14 @@ RUN mkdir /checker && \
     unzip /checker/kotlin.zip -d /checker && \
     rm /checker/kotlin.zip && \
     curl -L -o /checker/hs-test.jar \
-    https://github.com/hyperskill/hs-test/releases/download/v11.0.0/hs-test-11.0.0.jar
+    https://github.com/hyperskill/hs-test/releases/download/v11.0.0/hs-test-v11.0.0.jar
 
 ENV PATH="/checker/kotlinc/bin:$PATH"
 
 COPY checker /checker/
 
 WORKDIR /sandbox
+
 RUN go mod init sandbox && \
     go get github.com/PuerkitoBio/goquery@v1.8.1 && \
     go get github.com/gin-gonic/gin@v1.9.1 && \
