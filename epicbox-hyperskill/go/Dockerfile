@@ -12,8 +12,6 @@ RUN apt-get update && apt-get install -y \
     gcc \
     linux-headers-amd64 \
     unzip \
-    && python3 -m venv /venv \
-    && . /venv/bin/activate \
     && pip install aiosmtpd beautifulsoup4 pyyaml \
     && pip install https://github.com/hyperskill/hs-test-python/archive/v11.0.0.tar.gz \
     && apt-get remove -y gcc python3-dev linux-headers-amd64 \
