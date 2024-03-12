@@ -1,5 +1,0 @@
-source "https://rubygems.org"
-
-gem "rspec", "~> 3.12"
-gem "sqlite3", "~> 1.6"
-gem "sequel", "~> 5.74"
