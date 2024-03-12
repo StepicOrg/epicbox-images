@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-alpine3.18
+FROM ruby:3.2.3-alpine3.18
 LABEL maintainer="Stepik Team <team@stepik.org>"
 
 RUN adduser -DH -h /sandbox sandbox
