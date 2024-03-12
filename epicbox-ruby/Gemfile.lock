@@ -1,0 +1,32 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bigdecimal (3.1.6)
+    diff-lcs (1.5.1)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
+    sequel (5.78.0)
+      bigdecimal
+    sqlite3 (1.7.2-x86_64-linux)
+
+PLATFORMS
+  x86_64-linux-musl
+
+DEPENDENCIES
+  rspec (~> 3.13)
+  sequel (~> 5.78)
+  sqlite3 (~> 1.7)
+
+BUNDLED WITH
+   2.4.10

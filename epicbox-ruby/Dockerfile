@@ -1,8 +1,13 @@
-FROM ruby:2.5.3-alpine
-MAINTAINER Stepik Team <ab@stepik.org>
+FROM ruby:3.2.3-alpine3.18
+LABEL maintainer="Stepik Team <team@stepik.org>"
 
-RUN adduser -DH -h /sandbox sandbox && \
-    apk add --no-cache --virtual build-dependencies build-base && \
-    apk add --no-cache sqlite-dev && \
-    gem install rspec:3.8.0 sqlite3:1.3.13 sequel:5.15.0 && \
+RUN adduser -DH -h /sandbox sandbox
+
+WORKDIR /sandbox
+
+COPY Gemfile Gemfile.lock ./
+
+RUN apk add --no-cache --virtual build-dependencies build-base sqlite-dev make gcc musl-dev && \
+    bundle config --global frozen 1 && \
+    bundle install && \
     apk del build-dependencies
