@@ -22,7 +22,6 @@ RUN apt update && \
 
 RUN curl https://oscript.io/downloads/lts/x64/onescript-engine_${ONESCRIPT_VERSION}_all.deb > oscript.deb && \
     dpkg -i oscript.deb && \
-    rm -f oscript.deb \
-    opm update -all
+    rm -f oscript.deb
 
 RUN useradd -m -d /sandbox sandbox
