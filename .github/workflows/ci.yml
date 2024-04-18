@@ -182,45 +182,6 @@ jobs:
           image_name_tag: hyperskill-python:3.10
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_java7_image:
-    name: Build epicbox/java7 image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-java/7
-          image_name_tag: java:7u181
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_java8_image:
-    name: Build epicbox/java8 image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-java/8
-          image_name_tag: java:8u181
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_java11_image:
-    name: Build epicbox/java11 image
-    runs-on: [self-hosted, small]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Build
-        uses: ./.github/workflows/actions/build
-        with:
-          path: epicbox-java/11
-          image_name_tag: java:11.0.1
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
   build_java17_image:
     name: Build epicbox/java17 image
     runs-on: [self-hosted, small]
@@ -395,9 +356,6 @@ jobs:
       - build_hyperskill_node_image
       - build_hyperskill_node_javascript_image
       - build_hyperskill_python_image
-      - build_java7_image
-      - build_java8_image
-      - build_java11_image
       - build_java17_image
       - build_kotlin_image
       - build_mono_image
