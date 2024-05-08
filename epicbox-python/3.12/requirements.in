@@ -1,0 +1,71 @@
+stepic_bioinformatics @ https://github.com/StepicOrg/stepik-bioinformatics/archive/1.0.0.zip#sha256=d467a0e6bef6f421d14f849f2aa461a151e8c8ff1ee58b473649fa07140ed415
+stepic_common @ https://github.com/StepicOrg/stepik-common/archive/1.0.0.zip#sha256=aef2548abd7c083a9dad77dc33f20b7aa0918c80d3177876d165973bcf19e254
+stepic_utils @ https://github.com/StepicOrg/stepik-utils/archive/1.2.0.zip#sha256=912598af26ac31b752a0ee26293a1fe529c0188c495ba6b11d769294d129a3ba
+stepik_alignment @ https://github.com/StepicOrg/stepik-alignment/archive/1.1.0.zip#sha256=afcb3693fbef4b429b67d6651c4bd782bb26470821561ead0fb98e69ed45c10e
+
+sympy==1.12
+numpy==1.26.4
+scipy==1.12.0
+pandas==2.2.2
+lxml==5.2.1
+beautifulsoup4==4.12.3
+toolz==0.12.1
+# Cython is required by scikit-image
+# Cython==0.29.26 ???
+matplotlib==3.8.4
+networkx==3.3
+scikit-image==0.23.2
+scikit-learn==1.4.2
+# rsa to check encrypted tokens
+rsa==4.9
+# natural language processing
+nltk==3.8.1
+pymorphy2==0.9.1
+pymorphy2-dicts-ru==2.4.417127.4579844
+pymystem3==0.2.0
+sumy==0.11.0
+gensim==4.3.2
+fasttext==0.9.2
+
+mip==1.14.2
+shapely==2.0.4
+pycosat==0.6.6
+
+# Hardware description and verification language for hardware engineers.
+myhdl==0.11.45
+
+# Hyperskill
+Django==5.0.6
+
+# Stepik Academy
+djangorestframework==3.15.1
+
+# For testing
+factory-boy==3.3
+faker==25.0.1
+hypothesis==6.100.4
+
+opencv-python-headless==4.9.0.80
+
+pysqlite3-binary==0.5.2.post3
+
+# required by admin quiz
+pytest==8.2.0
+requests==2.31.0
+
+# required by sql challenge
+mysqlclient==2.2.4
+
+SQLAlchemy==2.0.30
+prettytable==3.10.0
+pydantic==2.7.1
+loguru==0.7.2
+fastapi==0.111.0
+sqlmodel==0.0.18
+emoji==2.11.1
+python-sat==1.8.dev12
+
+# Flask
+Flask==3.0.3
+Flask-WTF==1.2.1
+Flask-RESTful==0.3.10
