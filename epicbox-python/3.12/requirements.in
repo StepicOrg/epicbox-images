@@ -69,3 +69,4 @@ python-sat==1.8.dev12
 Flask==3.0.3
 Flask-WTF==1.2.1
 Flask-RESTful==0.3.10
+flask-smorest==0.44.0
