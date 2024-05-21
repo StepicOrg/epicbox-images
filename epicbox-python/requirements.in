@@ -49,6 +49,6 @@ pysqlite3-binary==0.4.6.post2
 
 # required by admin quiz
 pytest==6.2.5
-requests==2.27.1
+requests==2.32.0
 # required by sql challenge
 mysqlclient==2.1.0

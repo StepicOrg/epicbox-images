@@ -108,7 +108,7 @@ docutils==0.16
     #   python-daemon
 email-validator==1.1.3
     # via flask-appbuilder
-factory_boy==3.2.1
+factory-boy==3.2.1
     # via -r requirements.in
 faker==12.0.0
     # via factory-boy
@@ -369,7 +369,7 @@ pyyaml==6.0
     #   openapi-spec-validator
 regex==2022.1.18
     # via nltk
-requests==2.27.1
+requests==2.32.0
     # via
     #   -r requirements.in
     #   apache-airflow-providers-http
