@@ -9,7 +9,7 @@ alembic==1.7.6
 anyio==3.5.0
     # via httpcore
 apache-airflow==2.2.3
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 apache-airflow-providers-ftp==2.0.1
     # via apache-airflow
 apache-airflow-providers-http==2.0.2
@@ -34,7 +34,7 @@ attrs==20.3.0
 babel==2.9.1
     # via flask-babel
 beautifulsoup4==4.10.0
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 biopython==1.79
     # via
     #   stepic-bioinformatics
@@ -82,7 +82,7 @@ cryptography==36.0.1
 cycler==0.11.0
     # via matplotlib
 cython==0.29.26
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 dawg-python==0.7.2
     # via pymorphy2
 defusedxml==0.7.1
@@ -91,10 +91,10 @@ dill==0.3.4
     # via apache-airflow
 django==4.0.1
     # via
-    #   -r requirements.in
+    #   -r 3.10/requirements.in
     #   djangorestframework
 djangorestframework==3.13.1
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 dnspython==2.2.0
     # via email-validator
 docopt==0.6.2
@@ -108,12 +108,12 @@ docutils==0.16
     #   python-daemon
 email-validator==1.1.3
     # via flask-appbuilder
-factory_boy==3.2.1
-    # via -r requirements.in
+factory-boy==3.2.1
+    # via -r 3.10/requirements.in
 faker==12.0.0
     # via factory-boy
 fasttext==0.9.2
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 flask==1.1.4
     # via
     #   apache-airflow
@@ -148,7 +148,7 @@ flask-wtf==0.14.3
 fonttools==4.29.1
     # via matplotlib
 gensim==4.1.2
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 graphviz==0.19.1
     # via apache-airflow
 greenlet==1.1.2
@@ -162,7 +162,7 @@ httpcore==0.13.7
 httpx==0.19.0
     # via apache-airflow
 hypothesis==6.36.0
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 idna==3.3
     # via
     #   anyio
@@ -189,7 +189,7 @@ jinja2==2.11.3
     #   flask-babel
     #   python-nvd3
     #   swagger-ui-bundle
-joblib==1.1.0
+joblib==1.4.2
     # via
     #   nltk
     #   scikit-learn
@@ -209,7 +209,7 @@ lockfile==0.12.2
     #   python-daemon
 lxml==4.7.1
     # via
-    #   -r requirements.in
+    #   -r 3.10/requirements.in
     #   breadability
 mako==1.1.6
     # via alembic
@@ -234,26 +234,26 @@ marshmallow-oneofschema==3.0.1
 marshmallow-sqlalchemy==0.26.1
     # via flask-appbuilder
 matplotlib==3.5.1
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 mip==1.13.0
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 mpmath==1.2.1
     # via sympy
 myhdl==0.11
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 mysqlclient==2.1.0
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 networkx==2.6.3
     # via
-    #   -r requirements.in
+    #   -r 3.10/requirements.in
     #   scikit-image
 nltk==3.6.7
     # via
-    #   -r requirements.in
+    #   -r 3.10/requirements.in
     #   sumy
 numpy==1.22.1
     # via
-    #   -r requirements.in
+    #   -r 3.10/requirements.in
     #   biopython
     #   fasttext
     #   gensim
@@ -271,7 +271,7 @@ openapi-schema-validator==0.2.3
 openapi-spec-validator==0.4.0
     # via apache-airflow
 opencv-python-headless==4.5.5.62
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 packaging==21.3
     # via
     #   apache-airflow
@@ -279,7 +279,7 @@ packaging==21.3
     #   pytest
     #   scikit-image
 pandas==1.4.0
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 pendulum==2.1.2
     # via apache-airflow
 pillow==9.0.0
@@ -300,7 +300,7 @@ pyasn1==0.4.8
 pybind11==2.9.0
     # via fasttext
 pycosat==0.6.3
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 pycountry==22.1.10
     # via sumy
 pycparser==2.21
@@ -315,11 +315,11 @@ pyjwt==1.7.1
     #   flask-appbuilder
     #   flask-jwt-extended
 pymorphy2==0.9.1
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 pymorphy2-dicts-ru==2.4.417127.4579844
     # via pymorphy2
 pymystem3==0.2.0
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 pyparsing==3.0.7
     # via
     #   matplotlib
@@ -327,9 +327,9 @@ pyparsing==3.0.7
 pyrsistent==0.18.1
     # via jsonschema
 pysqlite3-binary==0.4.6.post2
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 pytest==6.2.5
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 python-daemon==2.3.0
     # via apache-airflow
 python-dateutil==2.8.2
@@ -371,7 +371,7 @@ regex==2022.1.18
     # via nltk
 requests==2.27.1
     # via
-    #   -r requirements.in
+    #   -r 3.10/requirements.in
     #   apache-airflow-providers-http
     #   pymystem3
     #   sumy
@@ -380,21 +380,21 @@ rfc3986[idna2008]==1.5.0
 rich==11.1.0
     # via apache-airflow
 rsa==4.8
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 scikit-image==0.19.1
-    # via -r requirements.in
-scikit-learn==1.0.2
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
+scikit-learn==1.5.0
+    # via -r 3.10/requirements.in
 scipy==1.7.3
     # via
-    #   -r requirements.in
+    #   -r 3.10/requirements.in
     #   gensim
     #   scikit-image
     #   scikit-learn
 setproctitle==1.2.2
     # via apache-airflow
 shapely==1.8.0
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 six==1.16.0
     # via
     #   flask-jwt-extended
@@ -429,19 +429,19 @@ sqlalchemy-utils==0.38.2
 sqlparse==0.4.2
     # via django
 stepic-bioinformatics @ https://github.com/StepicOrg/stepik-bioinformatics/archive/1.0.0.zip
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 stepic-common @ https://github.com/StepicOrg/stepik-common/archive/1.0.0.zip
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 stepic-utils @ https://github.com/StepicOrg/stepik-utils/archive/1.2.0.zip
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 stepik-alignment @ https://github.com/StepicOrg/stepik-alignment/archive/1.1.0.zip
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 sumy==0.9.0
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 swagger-ui-bundle==0.0.9
     # via apache-airflow
 sympy==1.9
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 tabulate==0.8.9
     # via apache-airflow
 tenacity==8.0.1
@@ -457,7 +457,7 @@ tifffile==2021.11.2
 toml==0.10.2
     # via pytest
 toolz==0.11.2
-    # via -r requirements.in
+    # via -r 3.10/requirements.in
 tqdm==4.62.3
     # via nltk
 unicodecsv==0.14.1
