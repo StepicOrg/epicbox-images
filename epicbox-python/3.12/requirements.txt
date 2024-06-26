@@ -56,7 +56,7 @@ django==5.0.6
     # via
     #   -r requirements.in
     #   djangorestframework
-djangorestframework==3.15.1
+djangorestframework==3.15.2
     # via -r requirements.in
 dnspython==2.6.1
     # via email-validator
