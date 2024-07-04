@@ -370,7 +370,7 @@ jobs:
       - build_typescript_image
     runs-on: [ self-hosted, small ]
     steps:
-      - uses: hyperskill/azure-purge-untagged@v2.0.0
+      - uses: hyperskill/azure-purge-untagged@v3.0.0
         with:
           client_id: ${{ secrets.CLIENT_ID }}
           client_secret: ${{ secrets.CLIENT_SECRET }}
