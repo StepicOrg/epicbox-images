@@ -12,7 +12,7 @@ concurrency:
 jobs:
   build_debian_image:
     name: Build epicbox/debian image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,7 +26,7 @@ jobs:
           add_hash: false
   build_clojure_image:
     name: Build epicbox-clojure image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -40,7 +40,7 @@ jobs:
   build_gcc_image:
     name: Build epicbox-gcc image
     needs: build_debian_image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_go_image:
     name: Build epicbox-go image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -66,7 +66,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_haskell_image:
     name: Build epicbox-haskell image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -79,7 +79,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_go_image:
     name: Build epicbox-hyperskill/go image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -106,7 +106,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_gradle_image:
     name: Build epicbox-hyperskill/gradle image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -119,7 +119,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_gradle_spring_image:
     name: Build epicbox-hyperskill/gradle-spring image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -132,7 +132,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_java_image:
     name: Build epicbox-hyperskill/java image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -145,7 +145,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_node_image:
     name: Build epicbox-hyperskill/node image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -158,7 +158,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_node_javascript_image:
     name: Build epicbox-hyperskill/node-javascript image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -171,7 +171,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_python_image:
     name: Build epicbox-hyperskill/python image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -184,7 +184,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_java17_image:
     name: Build epicbox/java17 image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -197,7 +197,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_kotlin_image:
     name: Build epicbox/kotlin image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -211,7 +211,7 @@ jobs:
   build_mono_image:
     name: Build epicbox/mono image
     needs: build_debian_image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -224,7 +224,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_node_image:
     name: Build epicbox/node image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -237,7 +237,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_php_image:
     name: Build epicbox/php image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -250,7 +250,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_pmd_image:
     name: Build epicbox/pmd image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_python_310_image:
     name: Build epicbox/python 3.10 image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -289,7 +289,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_ruby_image:
     name: Build epicbox/ruby image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -302,7 +302,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_scala2_image:
     name: Build epicbox/scala2 image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -315,7 +315,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_scala3_image:
     name: Build epicbox/scala3 image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -328,7 +328,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_typescript_image:
     name: Build epicbox/typescript image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -342,7 +342,7 @@ jobs:
 
   clean_untagged_images:
     name: Clean untagged images
-    needs: 
+    needs:
       - build_clojure_image
       - build_debian_image
       - build_gcc_image
@@ -368,7 +368,7 @@ jobs:
       - build_scala2_image
       - build_scala3_image
       - build_typescript_image
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     steps:
       - uses: hyperskill/azure-purge-untagged@v2.0.0
         with:

@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   assign-author:
-    runs-on: [self-hosted, small]
+    runs-on: [ self-hosted, small ]
     if: ${{ !github.event.pull_request.assignee }}
     steps:
       - uses: toshimaru/auto-author-assign@v2.1.0
