@@ -6,7 +6,7 @@ RUN apt-get update && \
 
 RUN mkdir /checker && \
     curl -L -o /checker/kotlin.zip \
-    https://github.com/JetBrains/kotlin/releases/download/v1.9.10/kotlin-compiler-1.9.10.zip && \
+    https://github.com/JetBrains/kotlin/releases/download/v2.0.0/kotlin-compiler-2.0.0.zip && \
     unzip /checker/kotlin.zip -d /checker && \
     rm /checker/kotlin.zip
 
