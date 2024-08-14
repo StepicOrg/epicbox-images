@@ -205,7 +205,7 @@ jobs:
         uses: ./.github/workflows/actions/build
         with:
           path: epicbox-kotlin
-          image_name_tag: kotlin:1.9.10
+          image_name_tag: kotlin:2.0.0
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_mono_image:
