@@ -339,6 +339,19 @@ jobs:
           image_name_tag: typescript:4.8.4
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
+  build_hyperstyle_image:
+    name: Build epicbox/hyperstyle image
+    runs-on: [ self-hosted, small ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-hyperstyle
+          image_name_tag: hyperstyle:ij-2024.9
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
 
   clean_untagged_images:
     name: Clean untagged images
@@ -368,6 +381,7 @@ jobs:
       - build_scala2_image
       - build_scala3_image
       - build_typescript_image
+      - build_hyperstyle_image
     runs-on: [ self-hosted, small ]
     steps:
       - uses: hyperskill/azure-purge-untagged@v3.0.0
