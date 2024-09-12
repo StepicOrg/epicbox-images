@@ -182,8 +182,8 @@ jobs:
           image_name_tag: hyperskill-python:3.10
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-  build_java17_image:
-    name: Build epicbox/java17 image
+  build_java_image:
+    name: Build epicbox/java image
     runs-on: [ self-hosted, small ]
     steps:
       - name: Checkout code
@@ -191,8 +191,8 @@ jobs:
       - name: Build
         uses: ./.github/workflows/actions/build
         with:
-          path: epicbox-java/17
-          image_name_tag: java:17.0.1
+          path: epicbox-java
+          image_name_tag: java:23-slim
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_kotlin_image:
@@ -369,7 +369,7 @@ jobs:
       - build_hyperskill_node_image
       - build_hyperskill_node_javascript_image
       - build_hyperskill_python_image
-      - build_java17_image
+      - build_java_image
       - build_kotlin_image
       - build_mono_image
       - build_node_image

@@ -1,4 +1,4 @@
-FROM openjdk:17.0.1-slim
+FROM openjdk:23-slim
 
 ARG GSON_LIB_URL=https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
 ARG JAVAX_JSON_API_LIB_URL=https://repo1.maven.org/maven2/javax/json/javax.json-api/1.1.4/javax.json-api-1.1.4.jar
