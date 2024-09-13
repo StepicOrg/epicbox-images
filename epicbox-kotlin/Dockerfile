@@ -8,11 +8,10 @@ ARG KOTLINX_HTML_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/ko
 ARG KOTLINX_SERIALIZATION_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-core-jvm/1.7.1/kotlinx-serialization-core-jvm-1.7.1.jar
 ARG KOTLINX_SERIALIZATION_JSON_JVM_URL=https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-json-jvm/1.7.1/kotlinx-serialization-json-jvm-1.7.1.jar
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends wget unzip libfreetype6 fontconfig && \
-    rm -rf /var/lib/apt/lists/* && \
     cd /usr/lib && \
     wget -q $COMPILER_URL && \
     unzip kotlin-compiler-*.zip && \
@@ -30,12 +29,11 @@ RUN apt-get update && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-ENV PATH $PATH:/usr/lib/kotlinc/bin
+ENV PATH=$PATH:/usr/lib/kotlinc/bin
 
 COPY kotlinc /usr/lib/kotlinc/bin/kotlinc
 COPY java_lookup_main.sh /usr/local/bin/java_lookup_main.sh
-RUN chmod +x /usr/lib/kotlinc/bin/kotlinc /usr/local/bin/java_lookup_main.sh
-
-RUN useradd -M -d /sandbox sandbox
+RUN chmod +x /usr/lib/kotlinc/bin/kotlinc /usr/local/bin/java_lookup_main.sh \
+  && useradd -M -d /sandbox sandbox
 
 CMD ["kotlinc"]
