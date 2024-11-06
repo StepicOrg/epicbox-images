@@ -287,6 +287,21 @@ jobs:
           image_name_tag: python:3.11.5
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
+  
+  build_python_312_image:
+    name: Build epicbox/python 3.12 image
+    runs-on: [ self-hosted, small ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Build
+        uses: ./.github/workflows/actions/build
+        with:
+          path: epicbox-python/312
+          image_name_tag: python:3.12.5
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  
   build_ruby_image:
     name: Build epicbox/ruby image
     runs-on: [ self-hosted, small ]
@@ -377,6 +392,7 @@ jobs:
       - build_pmd_image
       - build_python_310_image
       - build_python_311_image
+      - build_python_312_image
       - build_ruby_image
       - build_scala2_image
       - build_scala3_image
