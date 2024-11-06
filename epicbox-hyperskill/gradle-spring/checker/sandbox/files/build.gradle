@@ -2,8 +2,8 @@ buildscript {
     apply plugin: 'hyperskill'
 
     def javaVersion = Integer.parseInt(JavaVersion.current().getMajorVersion())
-    def bootVersion = (javaVersion == 17) ? hs.spring.bootVersion : "2.3.1.RELEASE"
-    def depsVersion = (javaVersion == 17) ? hs.spring.dependencyManagementVersion : "1.0.9.RELEASE"
+    def bootVersion = (javaVersion == 17) ? hs.spring.bootVersion : "3.2.0"
+    def depsVersion = (javaVersion == 17) ? hs.spring.dependencyManagementVersion : "1.1.3"
 
     repositories {
         mavenCentral()

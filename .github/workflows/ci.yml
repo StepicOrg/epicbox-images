@@ -114,7 +114,7 @@ jobs:
         uses: ./.github/workflows/actions/build
         with:
           path: epicbox-hyperskill/gradle
-          image_name_tag: hyperskill-gradle:7.3-jdk11
+          image_name_tag: hyperskill-gradle:8.5-jdk17
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_gradle_spring_image:
@@ -127,7 +127,7 @@ jobs:
         uses: ./.github/workflows/actions/build
         with:
           path: epicbox-hyperskill/gradle-spring
-          image_name_tag: hyperskill-gradle-spring:7.3-jdk17
+          image_name_tag: hyperskill-gradle-spring:8.5-jdk17
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
   build_hyperskill_java_image:

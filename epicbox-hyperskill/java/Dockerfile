@@ -1,4 +1,4 @@
-FROM openjdk:17-slim
+FROM openjdk:17-jdk-slim
 
 RUN apt-get update && \
     apt-get install --yes python3 unzip curl && \
@@ -11,7 +11,7 @@ RUN mkdir /checker && \
     rm /checker/kotlin.zip
 
 RUN curl -L -o /checker/hs-test.jar \
-    https://github.com/hyperskill/hs-test/releases/download/v10.0.3/hs-test-10.0.3.jar
+    https://github.com/hyperskill/hs-test/releases/download/v12.0.2/hs-test-12.0.2.jar
 
 ENV PATH="/checker/kotlinc/bin:$PATH"
 

@@ -1,10 +1,11 @@
 buildscript {
     repositories {
+        maven { url "https://packages.jetbrains.team/maven/p/hyperskill-hs-test/maven" }
         maven { url 'https://jitpack.io' }
     }
 
     dependencies {
-        classpath 'com.github.hyperskill:hs-gradle-plugin:v1.1'
+        classpath 'com.github.hyperskill:hs-gradle-plugin:1.6'
     }
 }
 

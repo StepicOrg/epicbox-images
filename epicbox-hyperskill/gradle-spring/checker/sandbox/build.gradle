@@ -7,11 +7,12 @@ subprojects {
 
     repositories {
         mavenCentral()
+        maven { url "https://packages.jetbrains.team/maven/p/hyperskill-hs-test/maven" }
         maven { url "https://jitpack.io" }
     }
 
     dependencies {
-        testImplementation 'com.github.hyperskill:hs-test:v10.0.3'
+        testImplementation 'com.github.hyperskill:hs-test:12.0.2'
     }
 
     sourceSets {
@@ -43,7 +44,7 @@ subprojects {
 
 project(':util') {
     dependencies {
-        implementation 'com.github.hyperskill:hs-test:v10.0.3'
+        implementation 'com.github.hyperskill:hs-test:12.0.2'
     }
 }
 
