@@ -1,0 +1,21 @@
+diff --git a/setup.py b/setup.py
+index 01cda61a..eff27784 100644
+--- a/setup.py
++++ b/setup.py
+@@ -327,7 +327,7 @@ docs_testenv = core_testenv + distributed_env + visdom_req + [
+ #
+ # see https://github.com/piskvorky/gensim/pull/3535
+ #
+-NUMPY_STR = 'numpy >= 1.18.5, < 2.0'
++NUMPY_STR = 'numpy >= 1.18.5, < 2.3'
+
+ install_requires = [
+     NUMPY_STR,
+@@ -340,7 +340,7 @@ install_requires = [
+
+ setup(
+     name='gensim',
+-    version='4.3.3',
++    version='4.3.3+stepik.1',
+     description='Python framework for fast Vector Space Modelling',
+     long_description=LONG_DESCRIPTION,

@@ -1,4 +1,20 @@
-FROM python:3.12.3-slim-bookworm
+FROM python:3.12.9-slim-bookworm AS builder
+
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential git
+
+COPY requirements_build.txt gensim.patch /tmp/
+
+WORKDIR /home
+
+RUN git clone https://github.com/piskvorky/gensim \
+    && cd /home/gensim \
+    && git switch -c 4.3.3 \
+    && patch -p1 < /tmp/gensim.patch \
+    && pip install -r /tmp/requirements_build.txt \
+    && python setup.py bdist_wheel
+
+
+FROM python:3.12.9-slim-bookworm
 MAINTAINER Stepik Team <team@stepik.org>
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -36,11 +52,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && locale-gen
 
 COPY requirements.txt /tmp
+COPY --from=builder /home/gensim/dist/gensim-4.3.3+stepik.1-cp312-cp312-linux_x86_64.whl /tmp/
 
-RUN pip install --no-cache-dir --root-user-action=ignore -r /tmp/requirements.txt \
+# `pybind11` must install before `fasttext` package.
+RUN pip install --no-cache-dir --root-user-action=ignore pybind11==2.13.6 fasttext==0.9.3 \
+    && pip install --no-cache-dir --root-user-action=ignore -r /tmp/requirements.txt \
+    && pip install --no-cache-dir --root-user-action=ignore /tmp/gensim-4.3.3+stepik.1-cp312-cp312-linux_x86_64.whl \
     && python -m nltk.downloader -d ${NLTK_DIR} averaged_perceptron_tagger brown gutenberg movie_reviews omw-1.4 punkt treebank word2vec_sample wordnet \
     && wget -qO- https://download.cdn.yandex.net/mystem/mystem-3.1-linux-64bit.tar.gz | tar xvz -C ${MYSTEM_DIR} \
-    && rm /tmp/requirements.txt \
+    && rm /tmp/requirements.txt /tmp/gensim-4.3.3+stepik.1-cp312-cp312-linux_x86_64.whl \
     && rm -Rf /root/.cache/
 
 RUN useradd -M -d /sandbox sandbox \
