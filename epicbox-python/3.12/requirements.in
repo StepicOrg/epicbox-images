@@ -4,7 +4,7 @@ stepic_utils @ https://github.com/StepicOrg/stepik-utils/archive/1.2.0.zip#sha25
 stepik_alignment @ https://github.com/StepicOrg/stepik-alignment/archive/1.1.0.zip#sha256=afcb3693fbef4b429b67d6651c4bd782bb26470821561ead0fb98e69ed45c10e
 
 sympy==1.12
-numpy==1.26.4
+numpy==2.2.3
 scipy==1.15.1
 pandas==2.2.3
 lxml==5.2.1
@@ -46,7 +46,7 @@ hypothesis==6.100.4
 
 opencv-python-headless==4.11.0.86
 
-pysqlite3-binary==0.5.2.post3
+pysqlite3-binary==0.5.4
 
 # required by admin quiz
 pytest==8.2.0
