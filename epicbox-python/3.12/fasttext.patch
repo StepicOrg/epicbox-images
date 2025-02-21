@@ -1,0 +1,44 @@
+diff --git a/python/fasttext_module/fasttext/FastText.py b/python/fasttext_module/fasttext/FastText.py
+index 21ecb02..85964e8 100644
+--- a/python/fasttext_module/fasttext/FastText.py
++++ b/python/fasttext_module/fasttext/FastText.py
+@@ -38,7 +38,7 @@ class _Meter:
+         else:
+             y_scores, y_true = ([], ())
+
+-        return np.array(y_scores, copy=False), np.array(y_true, copy=False)
++        return np.asarray(y_scores), np.asarray(y_true)
+
+     def precision_recall_curve(self, label=None):
+         """Return precision/recall curve"""
+@@ -53,7 +53,7 @@ class _Meter:
+         else:
+             precision, recall = ([], ())
+
+-        return np.array(precision, copy=False), np.array(recall, copy=False)
++        return np.asarray(precision), np.asarray(recall)
+
+     def precision_at_recall(self, recall, label=None):
+         """Return precision for a given recall"""
+@@ -236,7 +236,7 @@ class _FastText:
+             else:
+                 probs, labels = ([], ())
+
+-            return labels, np.array(probs, copy=False)
++            return labels, np.asarray(probs)
+
+     def get_input_matrix(self):
+         """
+diff --git a/setup.py b/setup.py
+index deb71a2..ce18f64 100644
+--- a/setup.py
++++ b/setup.py
+@@ -21,7 +21,7 @@ import subprocess
+ import platform
+ import io
+
+-__version__ = "0.9.2"
++__version__ = "0.9.2+stepik.1"
+ FASTTEXT_SRC = "src"
+
+ # Based on https://github.com/pybind/python_example
