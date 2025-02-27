@@ -1,4 +1,4 @@
-FROM python:3.12.3-slim-bookworm
+FROM python:3.12.9-slim-bookworm
 MAINTAINER Stepik Team <team@stepik.org>
 
 ENV DEBIAN_FRONTEND=noninteractive
