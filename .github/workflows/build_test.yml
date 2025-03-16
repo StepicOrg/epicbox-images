@@ -1,7 +1,7 @@
 name: Build image test
 
 on:
-  push:
+  push
 
 jobs:
   build_image:
