@@ -1,0 +1,60 @@
+name: Build image
+
+on:
+  workflow_dispatch:
+    inputs:
+      context:
+        description: Directory with Dockerfile (e.g. epicbox-python/3.12)
+        required: true
+        type: string
+      image_name:
+        description: Name of the Docker image (e.g. stepik/epicbox-python)
+        required: true
+        type: string
+      image_tag:
+        description: Tag for the Docker image (e.g. 3.12)
+        required: true
+        type: string
+      push:
+        description: Push image to the registry
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  build_image:
+    name: Build image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if image tag exists in Docker Hub
+        id: check_image
+        run: |
+          if [[ "${{ inputs.image_name }}" != "stepik/epicbox-"* ]]; then
+              echo "Error: Image name '${{ inputs.image_name }}' does not start with 'stepik/epicbox-' substring."
+              exit 1
+          fi
+
+          response=$(curl -s -o /dev/null -w "%{http_code}" "https://hub.docker.com/v2/repositories/${{ inputs.image_name }}/tags/${{ inputs.image_tag }}/")
+          if [ "$response" -eq 200 ]; then
+            echo "Error: Image ${{ inputs.image_name }}:${{ inputs.image_tag }} already exists!"
+            exit 1
+          fi
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build image
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ inputs.context }}
+          push: ${{ inputs.push }}
+          tags: ${{ inputs.image_name }}:${{ inputs.image_tag }}
