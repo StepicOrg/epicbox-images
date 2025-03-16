@@ -1,0 +1,14 @@
+name: Build image test
+
+on:
+  push:
+
+jobs:
+  build_image:
+    name: Build image
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
+    with:
+      context: epicbox-python/3.12
+      image_name: python
+      image_tag: test
