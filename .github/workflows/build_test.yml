@@ -10,6 +10,6 @@ jobs:
     secrets: inherit
     with:
       context: epicbox-python/3.12
-      image_name: python
+      image_name: stepik/epicbox-python
       image_tag: 3.12.9-test
       push: true
