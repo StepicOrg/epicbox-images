@@ -12,3 +12,4 @@ jobs:
       context: epicbox-python/3.12
       image_name: python
       image_tag: test
+      push: false
