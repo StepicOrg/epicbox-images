@@ -4,10 +4,10 @@ go 1.24
 
 require (
 	github.com/gin-gonic/gin v1.10.0
-	github.com/jmoiron/sqlx v1.3.5
-	github.com/mattn/go-sqlite3 v1.14.22
-	gorm.io/driver/sqlite v1.5.5
-	gorm.io/gorm v1.25.8
+	github.com/jmoiron/sqlx v1.4.0
+	github.com/mattn/go-sqlite3 v1.14.24
+	gorm.io/driver/sqlite v1.5.7
+	gorm.io/gorm v1.25.12
 )
 
 require (
