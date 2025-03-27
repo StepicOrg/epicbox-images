@@ -14,7 +14,7 @@ Images for programming languages:
 * C++17, C++20: [`stepik/epicbox-gcc:10.2.1`](https://hub.docker.com/r/stepik/epicbox-gcc/)
 * C#: [`stepik/epicbox-mono:5.0.0`](https://hub.docker.com/r/stepik/epicbox-mono/)
 * Clojure: [`stepik/epicbox-clojure:1.9.0.397`](https://hub.docker.com/r/stepik/epicbox-clojure/)
-* Go: [`stepik/epicbox-go:1.8.1`](https://hub.docker.com/r/stepik/epicbox-go/)
+* Go: [`stepik/epicbox-go:1.24.1-1`](https://hub.docker.com/r/stepik/epicbox-go/)
 * Haskell 7.8: [`stepik/epicbox-haskell:7.8.4`](https://hub.docker.com/r/stepik/epicbox-haskell/)
 * Haskell 8.0: [`stepik/epicbox-haskell:8.0.2`](https://hub.docker.com/r/stepik/epicbox-haskell/)
 * Java 7: [`stepik/epicbox-java:7u181`](https://hub.docker.com/r/stepik/epicbox-java/)
