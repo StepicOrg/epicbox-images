@@ -33,7 +33,7 @@ pycosat==0.6.6
 myhdl==0.11.45
 
 # Hyperskill
-Django==5.0.6
+Django==5.0.8
 
 # Stepik Academy
 djangorestframework==3.15.1
