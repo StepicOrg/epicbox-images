@@ -1,4 +1,4 @@
-FROM node:18.17.1-alpine
+FROM node:22.16.0-alpine
 MAINTAINER Stepik Team <ab@stepik.org>
 
 RUN adduser -DH -h /sandbox sandbox
