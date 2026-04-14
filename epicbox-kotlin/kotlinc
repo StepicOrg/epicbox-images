@@ -22,7 +22,7 @@ findKotlinHome() {
 }
 
 findJavaVersion() {
-    echo $(echo $JAVA_VERSION | cut -d. -f1)
+    [[ "$JAVA_VERSION" =~ ([0-9]+) ]] && echo "${BASH_REMATCH[1]}"
 }
 
 KOTLIN_HOME="$(findKotlinHome)"
