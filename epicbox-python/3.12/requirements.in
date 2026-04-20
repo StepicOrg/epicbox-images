@@ -36,7 +36,7 @@ myhdl==0.11.45
 Django==5.0.6
 
 # Stepik Academy
-djangorestframework==3.15.1
+djangorestframework==3.15.2
 
 # For testing
 factory-boy==3.3
