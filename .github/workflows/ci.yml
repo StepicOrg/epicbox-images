@@ -84,7 +84,7 @@ jobs:
             image_tag: 8.5.0-jdk17
           - path: epicbox-hyperskill/java
             image_name: hyperskill-java
-            image_tag: 17-jdk-slim
+            image_tag: 25-jdk-noble
           - path: epicbox-hyperskill/node
             image_name: hyperskill-node
             image_tag: 18.20.4-bullseye-slim
@@ -96,7 +96,7 @@ jobs:
             image_tag: 3.10-slim
           - path: epicbox-java
             image_name: java
-            image_tag: 23-slim
+            image_tag: 25-jdk-noble
           - path: epicbox-kotlin
             image_name: kotlin
             image_tag: 2.0.0-jdk-23-slim

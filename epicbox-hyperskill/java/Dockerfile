@@ -1,4 +1,4 @@
-FROM hyperskill.azurecr.io/openjdk:17-jdk-slim
+FROM hyperskill.azurecr.io/eclipse-temurin:25-jdk-noble
 
 RUN apt-get update && \
     apt-get install --yes python3 unzip curl && \
@@ -10,8 +10,8 @@ RUN mkdir /checker && \
     unzip /checker/kotlin.zip -d /checker && \
     rm /checker/kotlin.zip
 
-RUN curl -L -o /checker/hs-test.jar \
-    https://github.com/hyperskill/hs-test/releases/download/v12.0.3/hs-test-12.0.3.jar
+RUN curl -fL -o /checker/hs-test.jar \
+    https://github.com/hyperskill/hs-test/releases/download/v13.1.0/hs-test-13.1.0.jar
 
 ENV PATH="/checker/kotlinc/bin:$PATH"
 
