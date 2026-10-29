@@ -1,0 +1,25 @@
+FROM stepik/epicbox-pascalabc:3.8.3
+
+ARG PABC_SOURCE_REV=1d09aa7a15a6fee262d6e051bc3d900640e08e7d
+
+ADD https://github.com/pascalabcnet/pascalabcnet/archive/${PABC_SOURCE_REV}.tar.gz \
+  /tmp/pascalabcnet.tar.gz
+
+RUN mkdir /tmp/pascalabcnet-src \
+  && tar -xzf /tmp/pascalabcnet.tar.gz \
+       -C /tmp/pascalabcnet-src --strip-components=1 \
+  && cp /tmp/pascalabcnet-src/bin/Lib/*.pas /opt/pabcnetc/Lib/ \
+  && cp /tmp/pascalabcnet-src/ReleaseGenerators/RebuildStandartModulesMono.pas \
+       /tmp/RebuildStandartModulesMono.pas \
+  # Use UTF-8 without a BOM in the runtime initialization.
+  && sed -i \
+       's/System\.Console\.OutputEncoding := Encoding\.UTF8;/System.Console.OutputEncoding := new System.Text.UTF8Encoding(false);/' \
+       /opt/pabcnetc/Lib/PABCSystem.pas \
+  # Rebuild the Mono standard-library set consistently.
+  && find /opt/pabcnetc/Lib -name '*.pcu' -delete \
+  && mono /opt/pabcnetc/pabcnetcclear.exe \
+       /tmp/RebuildStandartModulesMono.pas \
+  && rm -rf \
+       /tmp/pascalabcnet-src \
+       /tmp/pascalabcnet.tar.gz \
+       /tmp/RebuildStandartModulesMono.*
